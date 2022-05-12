@@ -1,0 +1,385 @@
+#archive-title {
+               font-family: 'Teko', sans-serif;
+               font-weight: 300;
+               width: 500px;
+               line-height: 0.7;
+               text-align: left;
+               font-size: 180px;
+               margin-top: 100px;
+
+
+           }
+
+           #archive-article-short {
+               font-family: 'Barlow Condensed', sans-serif;
+               font-weight: 100;
+               width: 600px;
+               font-size: 20px;
+               text-align: left;
+               margin-top: 15px;
+               column-count: 1;
+               margin-top:-40px;
+           }
+
+           @media screen and (max-width: 950px) {
+            #archive-article-short {
+                width: 800px;
+                font-size: 35px;
+                font-weight: 200;
+                margin-top:-60px;
+            }
+        }
+
+           #back {
+               cursor: pointer;
+               position: sticky;
+               top: 50px;
+               margin-left: -80px;
+               border-radius: 50%;
+               height: 50px;
+               width: 50px;
+               background: url(../graphics/interface/back-black.png);
+               background-size: 35px 35px;
+               background-repeat: no-repeat;
+               background-position: center;
+               z-index: 2000;
+               margin-top:10px;
+           }
+
+           #back:hover {
+               background-color: rgba(255, 255, 255, 0.5);
+           }
+
+           @media screen and (max-width: 950px) {
+            #back {
+                margin-top:20px;
+                height: 70px;
+               width: 70px;
+               background: url(../graphics/interface/back-black.png);
+               background-size: 45px 45px;
+               background-repeat: no-repeat;
+               background-position: center;
+            }
+        }
+
+        #filter-container{
+            margin-top:30px;
+            width:550px;
+            height:60px;
+            
+        }
+        @media screen and (max-width: 950px) {
+        #filter-container{
+            margin-top:50px;
+            width:100%;
+            height:180px;
+            
+        }
+    }
+
+
+
+           .filtertag {
+               font-family: monospace;
+               float: left;
+               margin-right: 10px;
+               margin-bottom: 10px;
+               font-size: 14px;
+               font-weight: 100;
+               border-radius: 5px;
+               padding: 5px 10px 5px 10px;
+               background-color: rgba(0, 0, 0, 0.05);
+               transition: all 0.1s ease-in-out;
+               cursor: pointer;
+           }
+
+           @media screen and (max-width: 950px) {
+            .filtertag {
+               
+                margin-right: 15px;
+                margin-bottom: 15px;
+                font-size: 24px;
+                font-weight: 100;
+                border-radius: 5px;
+                padding: 5px 10px 5px 10px;
+             
+            }
+        }
+
+           .activeTag {
+               background-color: rgb(158, 60, 60);
+               color: white;
+           }
+
+           .filtertag:Hover {
+               transform: scale(1.06);
+               cursor: pointer;
+               background-color: rgba(255, 255, 255, 0.5);
+           }
+
+
+           .activeTag:Hover {
+               color: white;
+               background-color: rgb(158, 60, 60);
+               transform: scale(1.00);
+               cursor: pointer;
+
+           }
+
+           .archive-column-top {
+
+               margin-bottom: 20px;
+               height: 30px;
+           }
+
+           .archive-column-title {
+               float: left;
+               font-family: 'Barlow Condensed', sans-serif;
+               font-weight: 100;
+               text-align: left;
+               font-size: 22px;
+           }
+
+
+           .info-button {
+               float: left;
+               margin-left: 10px;
+               margin-top: 4px;
+               width: 18px;
+               height: 18px;
+               border-radius: 50%;
+               border-width: 1.5px;
+               border-style: solid;
+               text-align: center;
+               line-height: 1.0;
+               font-weight: bolder;
+               opacity: 0.4;
+               cursor: pointer;
+           }
+
+           .info-button:hover {
+               border-width: 1.5px;
+               opacity: 1.0;
+           }
+
+
+
+           .archive-column {
+               flex-grow: 1;
+               flex-basis: 0;
+               margin-right: 20px;
+
+           }
+
+           .archive-column-documents {
+               flex-grow: 3;
+               flex-basis: 0;
+               margin-left: 30px;
+
+           }
+
+           .archive-column-item {
+               margin-bottom: 10px;
+               height: 100px;
+               width: 100%;
+               transition: all 0.1s ease-in-out;
+               background-color: green;
+               cursor:pointer;
+
+           }
+
+           .archive-column-item:hover {
+               transform: scale(1.06);
+
+           }
+
+           #filmcolumn .archive-column-item {
+
+
+               background-color: #cccccc;
+
+           }
+
+           #blueprintcolumn .archive-column-item {
+
+               background-color: #999999;
+
+           }
+
+
+           #drawingcolumn .archive-column-item {
+               background-color: #666666;
+
+
+           }
+
+
+           #photocolumn .archive-column-item {
+
+
+               background-color: #444444;
+
+           }
+
+           #modelcolumn .archive-column-item {
+
+               background-color: black;
+
+           }
+
+           .archive-column-document-item {
+               display: flex;
+               flex-direction: row;
+               flex-wrap: nowrap;
+               margin-bottom: 10px;
+               width: 100%;
+               height: 70px;
+               cursor:pointer;
+               font-family: 'Barlow Condensed', sans-serif;
+               font-weight: 300;
+               transition: all 0.1s ease-in-out;
+
+           }
+           .archive-column-document-item:hover {
+              
+               transform: scale(1.03);
+           }
+
+           .archive-column-document-icon {
+               float: left;
+               width: 50px;
+               height: 70px;
+               background-image: url(../graphics/article1icon.jpg);
+               background-size: 50px, 70px;
+               ;
+
+           }
+
+           .archive-column-document-info {
+               flex-grow: 1;
+               flex-basis: 0;
+               float: left;
+               margin-left: 20px;
+               height: 70px;
+
+               width: auto;
+           }
+
+           .archive-column-document-title {
+
+            
+               font-size: 18px;
+               max-height: 22px;
+               overflow: hidden;
+           }
+
+           .archive-column-document-author {
+
+        
+               font-size: 15px;
+               margin-top: 10px;
+           }
+
+           #archive-model {
+               position: absolute;
+               margin-top: 00px;
+               margin-left: 30%;
+               margin-right: auto;
+               width: 800px;
+               height: 800px;
+               background-image: url(../graphics/3dplaceholder.png);
+               background-size: 800px, 800px;
+               animation-name: PosterFade;
+               animation-duration: 4s;
+               animation-delay: 0s;
+               animation-timing-function: ease;
+               animation-fill-mode: forwards;
+               opacity: 0.0;
+               transition: all .2s ease-in-out;
+
+           }
+
+           @media screen and (max-width: 950px) {
+            #archive-model {
+                position: absolute;
+                margin-top: 30px;
+                margin-left: 280px;
+          
+                width: 550px;
+                height: 550px;
+                background-image: url(../graphics/3dplaceholder.png);
+                background-size: 550px, 550px;
+            
+               
+           
+                }
+        }
+
+           @keyframes PosterFade {
+               from {
+                   opacity: 0.0;
+                   transform: scale(0.5);
+               }
+
+               to {
+                   opacity: 1.0;
+                   transform: scale(1.0);
+               }
+           }
+
+
+           #archive-model-loader {
+               position: relative;
+               margin-top: 300px;
+               margin-left: auto;
+               margin-right: auto;
+               width: 200px;
+               height: 200px;
+               border-radius: 50%;
+               background-color: rgb(255, 255, 255, 0.7);
+               transition: all 0.2s ease-in-out;
+               animation: pulse 2s infinite;
+               cursor:pointer;
+
+           }
+
+           #archive-model-loader-label {
+
+               font-size: 35px;
+               line-height: 1.0;
+               font-family: 'Teko', sans-serif;
+               padding: 50px 30px 50px 30px;
+               text-align: center;
+           }
+
+           @media screen and (max-width: 950px) {
+            #archive-model-loader {
+            
+                margin-top: 150px;
+      
+                width: 200px;
+                height: 200px;
+                }
+
+                #archive-model-loader-label {
+
+            
+                    
+                    padding: 50px 20px 50px 20px;
+           
+                }
+        }
+
+           @keyframes pulse {
+               0% {
+                   transform: scale(0.95);
+               }
+
+               50% {
+                   transform: scale(1);
+               }
+
+               100% {
+                   transform: scale(0.95);
+               }
+           }
