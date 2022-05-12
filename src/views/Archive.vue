@@ -4,16 +4,43 @@ import { reactive } from "@vue/reactivity";
 
 const range = (n) => [...Array(n).keys()];
 
-async function getPhotos() {
-  const response = await fetch(
-    "https://sodrarada.dh.gu.se/api/images?type=photograph"
-  );
-  const data = await response.json();
-  console.log(data);
-  return data;
+async function getVideos() {
+  const response = await fetch("https://sodrarada.dh.gu.se/api/videos");
+  return await response.json();
 }
-const images = reactive([]);
-getPhotos().then((data) => images.push(...data));
+const videos = reactive([]);
+getVideos().then((items) => videos.push(...items));
+
+async function getModels() {
+  const response = await fetch("https://sodrarada.dh.gu.se/api/models");
+  return await response.json();
+}
+const models = reactive([]);
+getModels().then((items) => models.push(...items));
+
+async function getImages(type) {
+  const params = new URLSearchParams({ type });
+  const response = await fetch(
+    "https://sodrarada.dh.gu.se/api/images?" + params
+  );
+  return await response.json();
+}
+
+const photos = reactive([]);
+getImages("photograph").then((items) => photos.push(...items));
+
+const sketches = reactive([]);
+getImages("sketch").then((items) => sketches.push(...items));
+
+const blueprints = reactive([]);
+getImages("blueprint").then((items) => blueprints.push(...items));
+
+async function getDocuments() {
+  const response = await fetch("https://sodrarada.dh.gu.se/api/documents");
+  return await response.json();
+}
+const documents = reactive([]);
+getDocuments().then((items) => documents.push(...items));
 </script>
 
 <template>
@@ -85,14 +112,14 @@ getPhotos().then((data) => images.push(...data));
           <div class="archive-column-title">Filmer</div>
           <div class="info-button">i</div>
         </div>
-        <div v-for="i in range(9)" class="archive-column-item"></div>
+        <div v-for="video in videos" class="archive-column-item"></div>
 
         <div class="archive-column-top" style="margin-top: 30px">
           <div class="archive-column-title">Digital modell</div>
           <div class="info-button">i</div>
         </div>
 
-        <div v-for="i in range(8)" class="archive-column-item"></div>
+        <div v-for="model in models" class="archive-column-item"></div>
       </div>
 
       <div class="archive-column" id="blueprintcolumn">
@@ -101,7 +128,12 @@ getPhotos().then((data) => images.push(...data));
           <div class="info-button">i</div>
         </div>
 
-        <div v-for="i in range(27)" class="archive-column-item"></div>
+        <div v-for="image in blueprints" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+            :alt="image.description"
+          />
+        </div>
       </div>
 
       <div class="archive-column" id="drawingcolumn">
@@ -110,7 +142,12 @@ getPhotos().then((data) => images.push(...data));
           <div class="info-button">i</div>
         </div>
 
-        <div v-for="i in range(19)" class="archive-column-item"></div>
+        <div v-for="image in sketches" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+            :alt="image.description"
+          />
+        </div>
       </div>
 
       <div class="archive-column" id="photocolumn">
@@ -119,9 +156,9 @@ getPhotos().then((data) => images.push(...data));
           <div class="info-button">i</div>
         </div>
 
-        <div v-for="image in images" class="archive-column-item">
+        <div v-for="image in photos" class="archive-column-item">
           <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.thumbnail.url}`"
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
             :alt="image.description"
           />
         </div>
@@ -143,66 +180,42 @@ getPhotos().then((data) => images.push(...data));
             class="archive-column-documents-subcolumn"
             style="flex-grow: 1; flex-basis: 0"
           >
-            <template v-for="i in range(8)">
+            <a
+              v-for="document in documents.slice(0, documents.length / 2)"
+              :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
+            >
               <div class="archive-column-document-item">
                 <div class="archive-column-document-icon"></div>
                 <div class="archive-column-document-info">
                   <div class="archive-column-document-title">
-                    Takfoten p&aring; T&aring;ger&aring;sa kyrka.
-                    F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
-                    S&ouml;dra R&aring;da taklag.
+                    {{ document.title }}
                   </div>
                   <div class="archive-column-document-author">
                     F&ouml;rfattarnamn
                   </div>
                 </div>
               </div>
-
-              <div class="archive-column-document-item">
-                <div class="archive-column-document-icon"></div>
-                <div class="archive-column-document-info">
-                  <div class="archive-column-document-title">
-                    Taklaget i S&ouml;dra R&aring;da
-                  </div>
-                  <div class="archive-column-document-author">
-                    F&ouml;rfattarnamn
-                  </div>
-                </div>
-              </div>
-            </template>
+            </a>
           </div>
 
           <div
             class="archive-column-documents-subcolumn"
             style="flex-grow: 1; flex-basis: 0"
           >
-            <template v-for="i in range(6)">
-              <div class="archive-column-document-item">
-                <div class="archive-column-document-icon"></div>
-                <div class="archive-column-document-info">
-                  <div class="archive-column-document-title">
-                    Takfoten p&aring; T&aring;ger&aring;sa kyrka.
-                    F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
-                    S&ouml;dra R&aring;da taklag.
-                  </div>
-                  <div class="archive-column-document-author">
-                    F&ouml;rfattarnamn
-                  </div>
+            <div
+              v-for="document in documents.slice(documents.length / 2)"
+              class="archive-column-document-item"
+            >
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  {{ document.title }}
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
                 </div>
               </div>
-
-              <div class="archive-column-document-item">
-                <div class="archive-column-document-icon"></div>
-                <div class="archive-column-document-info">
-                  <div class="archive-column-document-title">
-                    Taklaget i S&ouml;dra R&aring;da
-                  </div>
-                  <div class="archive-column-document-author">
-                    F&ouml;rfattarnamn
-                  </div>
-                </div>
-              </div>
-            </template>
+            </div>
           </div>
         </div>
       </div>
