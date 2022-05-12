@@ -41,6 +41,13 @@ async function getDocuments() {
 }
 const documents = reactive([]);
 getDocuments().then((items) => documents.push(...items));
+
+async function getKeywords() {
+  const response = await fetch("https://sodrarada.dh.gu.se/api/keywords");
+  return await response.json();
+}
+const keywords = reactive([]);
+getKeywords().then((items) => keywords.push(...items.slice(0, 10)));
 </script>
 
 <template>
@@ -86,15 +93,9 @@ getDocuments().then((items) => documents.push(...items));
 
     <div id="filter-container">
       <div class="filtertag activeTag">Hela arkivet</div>
-      <div class="filtertag">#D&ouml;rren</div>
-      <div class="filtertag">#Golvet</div>
-      <div class="filtertag">#Koret</div>
-      <div class="filtertag">#Navet</div>
-      <div class="filtertag">#Sakristian</div>
-      <div class="filtertag">#Syllen</div>
-      <div class="filtertag">#Taket</div>
-      <div class="filtertag">#Taklaget</div>
-      <div class="filtertag">#Takfoten</div>
+      <div v-for="keyword in keywords" class="filtertag">
+        #{{ keyword.label }}
+      </div>
     </div>
 
     <div
