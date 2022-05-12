@@ -1,7 +1,19 @@
 <script setup>
 import "@/assets/archive.css";
+import { reactive } from "@vue/reactivity";
 
 const range = (n) => [...Array(n).keys()];
+
+async function getPhotos() {
+  const response = await fetch(
+    "https://sodrarada.dh.gu.se/api/images?type=photograph"
+  );
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+const images = reactive([]);
+getPhotos().then((data) => images.push(...data));
 </script>
 
 <template>
@@ -107,7 +119,12 @@ const range = (n) => [...Array(n).keys()];
           <div class="info-button">i</div>
         </div>
 
-        <div v-for="i in range(27)" class="archive-column-item"></div>
+        <div v-for="image in images" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.thumbnail.url}`"
+            :alt="image.description"
+          />
+        </div>
       </div>
 
       <div class="archive-column-documents">
@@ -194,3 +211,14 @@ const range = (n) => [...Array(n).keys()];
 
   <div id="foot" style="float: left; width: 100%"></div>
 </template>
+
+<style scoped>
+.archive-column-item {
+  min-height: 10px;
+  height: auto;
+}
+.archive-column-item img {
+  display: block;
+  width: 100%;
+}
+</style>
