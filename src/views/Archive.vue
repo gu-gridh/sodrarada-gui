@@ -1,6 +1,6 @@
 <script setup>
 import "@/assets/archive.css";
-import { reactive } from "@vue/reactivity";
+import { reactive } from "vue";
 
 const range = (n) => [...Array(n).keys()];
 

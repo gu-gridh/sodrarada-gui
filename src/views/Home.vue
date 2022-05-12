@@ -51,13 +51,10 @@
         <div class="timeline-date">1326</div>
       </div>
       <div class="timeline-main">
-        <div
-          class="timeline-circle"
-          style="background-image: url(graphics/1326still.jpg)"
-        >
+        <div class="timeline-circle" id="timeline-circle-1326">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="graphics/1326.mp4" type="video/mp4" />
-            <source src="graphics/1326.webm" type="video/webm" />
+            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
       </div>
@@ -70,28 +67,20 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt="Panorama: Navet"
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Navet</div>
           </div>
 
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt="Panorama: Koret"
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -108,15 +97,10 @@
       </div>
       <div class="timeline-main" style="height: 100px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/panorama3.jpg"
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 100px;
-              background-image: url(graphics/panorama3.jpg);
-              background-size: 200px 100px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -139,16 +123,11 @@
       </div>
       <div class="timeline-main" style="height: 150px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/painting2.jpg"
+            alt=""
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 150px;
-              background-color: green;
-              background-image: url(graphics/painting2.jpg);
-              background-size: 200px 150px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -169,13 +148,10 @@
         <div class="timeline-date">1750</div>
       </div>
       <div class="timeline-main">
-        <div
-          class="timeline-circle"
-          style="background-image: url(graphics/1750still.jpg)"
-        >
+        <div id="timeline-circle-1750" class="timeline-circle">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="graphics/1326.mp4" type="video/mp4" />
-            <source src="graphics/1326.webm" type="video/webm" />
+            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
       </div>
@@ -188,28 +164,20 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt="Panorama: Navet"
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Navet</div>
           </div>
 
           <div class="timeline-infographics" style="">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt="Panorama: Koret"
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -226,15 +194,11 @@
       </div>
       <div class="timeline-main" style="height: 150px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/painting3.jpg"
+            alt=""
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 150px;
-              background-image: url(graphics/painting3.jpg);
-              background-size: 200px 150px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -258,15 +222,11 @@
       </div>
       <div class="timeline-main" style="height: 100px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/painting4.jpg"
+            alt=""
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 100px;
-              background-image: url(graphics/painting4.jpg);
-              background-size: 200px 100px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -288,15 +248,11 @@
       </div>
       <div class="timeline-main" style="height: 150px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/1995still.jpg"
+            alt=""
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 150px;
-              background-image: url(graphics/1995still.jpg);
-              background-size: 200px 150px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -309,15 +265,11 @@
           style="width: 150px"
         >
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt=""
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -333,13 +285,10 @@
         <div class="timeline-date">2001</div>
       </div>
       <div class="timeline-main">
-        <div
-          class="timeline-circle"
-          style="background-image: url(graphics/2001still.jpg)"
-        >
+        <div class="timeline-circle" id="timeline-circle-2001">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="graphics/1326.mp4" type="video/mp4" />
-            <source src="graphics/1326.webm" type="video/webm" />
+            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
       </div>
@@ -365,15 +314,11 @@
       </div>
       <div class="timeline-main" style="height: 180px">
         <div class="timeline-picture">
-          <div
+          <img
+            src="@/assets/graphics/2021still.jpg"
+            alt=""
             class="timeline-infographics-image"
-            style="
-              width: 200px;
-              height: 180px;
-              background-image: url(graphics/2021still.jpg);
-              background-size: 200px 180px;
-            "
-          ></div>
+          />
         </div>
       </div>
       <div class="timeline-rightside">
@@ -386,27 +331,19 @@
           style="margin-bottom: 50px"
         >
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 100px;
-                background-image: url(graphics/2021still.jpg);
-                background-size: 150px 100px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/2021still.jpg"
+              alt=""
+              class="timeline-infographics-image-secondary"
+            />
           </div>
 
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 100px;
-                background-image: url(graphics/2021still.jpg);
-                background-size: 150px 100px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/2021still.jpg"
+              alt=""
+              class="timeline-infographics-image-secondary"
+            />
           </div>
         </div>
       </div>
@@ -421,13 +358,10 @@
         <div class="timeline-date">2021</div>
       </div>
       <div class="timeline-main">
-        <div
-          class="timeline-circle"
-          style="background-image: url(graphics/2021still.jpg)"
-        >
+        <div class="timeline-circle" id="timeline-circle-2021" style="">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="graphics/1326.mp4" type="video/mp4" />
-            <source src="graphics/1326.webm" type="video/webm" />
+            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
       </div>
@@ -440,28 +374,20 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt=""
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Navet</div>
           </div>
 
           <div class="timeline-infographics" style="">
-            <div
-              class="timeline-infographics-image"
-              style="
-                width: 150px;
-                height: 75px;
-                background-image: url(graphics/panorama3.jpg);
-                background-size: 150px 75px;
-              "
-            ></div>
+            <img
+              src="@/assets/graphics/panorama3.jpg"
+              alt=""
+              class="timeline-infographics-image-secondary"
+            />
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -499,4 +425,26 @@
   <div id="foot" style="float: left; width: 100%">-</div>
 </template>
 
-<style></style>
+<style scoped>
+img {
+  display: block;
+}
+#timeline-circle-1326 {
+  background-image: url(@/assets/graphics/1326still.jpg);
+}
+#timeline-circle-1750 {
+  background-image: url(@/assets/graphics/1750still.jpg);
+}
+#timeline-circle-2001 {
+  background-image: url(@/assets/graphics/2001still.jpg);
+}
+#timeline-circle-2021 {
+  background-image: url(@/assets/graphics/2021still.jpg);
+}
+.timeline-infographics-image {
+  width: 200px;
+}
+.timeline-infographics-image-secondary {
+  width: 150px;
+}
+</style>

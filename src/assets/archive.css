@@ -38,7 +38,7 @@
                border-radius: 50%;
                height: 50px;
                width: 50px;
-               background: url(../graphics/interface/back-black.png);
+               background: url(@/assets/graphics/interface/back-black.png);
                background-size: 35px 35px;
                background-repeat: no-repeat;
                background-position: center;
@@ -55,7 +55,7 @@
                 margin-top:20px;
                 height: 70px;
                width: 70px;
-               background: url(../graphics/interface/back-black.png);
+               background: url(@/assets/graphics/interface/back-black.png);
                background-size: 45px 45px;
                background-repeat: no-repeat;
                background-position: center;
@@ -249,7 +249,7 @@
                float: left;
                width: 50px;
                height: 70px;
-               background-image: url(../graphics/article1icon.jpg);
+               background-image: url(@/assets/graphics/article1icon.jpg);
                background-size: 50px, 70px;
                ;
 
@@ -287,7 +287,7 @@
                margin-right: auto;
                width: 800px;
                height: 800px;
-               background-image: url(../graphics/3dplaceholder.png);
+               background-image: url(@/assets/graphics/3dplaceholder.png);
                background-size: 800px, 800px;
                animation-name: PosterFade;
                animation-duration: 4s;
@@ -307,7 +307,7 @@
           
                 width: 550px;
                 height: 550px;
-                background-image: url(../graphics/3dplaceholder.png);
+                background-image: url(@/assets/graphics/3dplaceholder.png);
                 background-size: 550px, 550px;
             
                
