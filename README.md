@@ -1,6 +1,10 @@
-# Vue 3 + Vite
+# Södra Råda GUI
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is the frontend at https://sodrarada.dh.gu.se/
+
+It uses [Vite](https://vitejs.dev/) with [Vue 3](https://vuejs.org/), [Vue Router](https://router.vuejs.org/).
+
+Run `yarn` to install and
 
 ## Recommended IDE Setup
 
