@@ -1,0 +1,887 @@
+<script setup>
+import "@/assets/archive.css";
+</script>
+
+<template>
+  <div
+    id="top-container"
+    style="margin-left: 100px; overflow: hidden; width: 100%"
+  >
+    <div id="archive-model">
+      <div id="archive-model-loader">
+        <div id="archive-model-loader-label">
+          Klicka h&auml;r<br />
+          f&ouml;r att ladda in <br />
+          modellen<br />
+        </div>
+      </div>
+    </div>
+    <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
+  </div>
+  <div id="main-container" style="margin-left: 100px">
+    <router-link to="/"> <div id="back"></div></router-link>
+    <div id="archive-article-short">
+      Lorem ipsum dolor sit amet, consectetur <br />
+      adipiscing elit. Pellentesque vel consectetur <br />
+      odio, vel semper felis. Quisque pharetra laoreet <br />
+      magna sed luctus. Etiam ultricies vehicula leo, at <br />
+      molestie eros consectetur a. Vivamus vestibulum consequat <br />
+      ex, sit amet lobortis felis gravida id. Vestibulum suscipit, augue<br />
+      vitae rutrum sodales, ex nunc dignissim nunc, non suscipit <br />
+      eros velit vestibulum mauris.
+    </div>
+
+    <div id="archive-article-long" style="display: none">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel
+      consectetur odio, vel semper felis. Quisque pharetra laoreet magna sed
+      luctus. Etiam ultricies vehicula leo, at molestie eros consectetur a.
+      Vivamus vestibulum consequat ex, sit amet lobortis felis gravida id.
+      Vestibulum suscipit, augue vitae rutrum sodales, ex nunc dignissim nunc,
+      non suscipit eros velit vestibulum mauris. Morbi blandit nisl eu sagittis
+      fringilla. Pellentesque a augue at libero blandit iaculis. Proin ornare
+      fringilla nunc, in accumsan lectus lobortis at. Pellentesque in purus at
+      augue rutrum ultricies.
+    </div>
+
+    <div id="filter-container">
+      <div class="filtertag activeTag">Hela arkivet</div>
+      <div class="filtertag">#D&ouml;rren</div>
+      <div class="filtertag">#Golvet</div>
+      <div class="filtertag">#Koret</div>
+      <div class="filtertag">#Navet</div>
+      <div class="filtertag">#Sakristian</div>
+      <div class="filtertag">#Syllen</div>
+      <div class="filtertag">#Taket</div>
+      <div class="filtertag">#Taklaget</div>
+      <div class="filtertag">#Takfoten</div>
+    </div>
+
+    <div
+      id="archive-container"
+      style="
+        margin-right: 30px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      "
+    >
+      <div class="archive-column" id="filmcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Filmer</div>
+          <div class="info-button">i</div>
+        </div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+
+        <div class="archive-column-top" style="margin-top: 30px">
+          <div class="archive-column-title">Digital modell</div>
+          <div class="info-button">i</div>
+        </div>
+
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+      </div>
+
+      <div class="archive-column" id="blueprintcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Ritningar</div>
+          <div class="info-button">i</div>
+        </div>
+
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+      </div>
+
+      <div class="archive-column" id="drawingcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Teckningar</div>
+          <div class="info-button">i</div>
+        </div>
+
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+      </div>
+
+      <div class="archive-column" id="photocolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Fotografier</div>
+          <div class="info-button">i</div>
+        </div>
+
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+        <div class="archive-column-item"></div>
+      </div>
+
+      <div class="archive-column-documents">
+        <div class="archive-column-top">
+          <div class="archive-column-title">
+            Rapporter, artiklar och dokument
+          </div>
+          <div class="info-button">i</div>
+        </div>
+
+        <div
+          class="archive-column-documents-subcolumns"
+          style="display: flex; flex-direction: row; flex-wrap: nowrap"
+        >
+          <div
+            class="archive-column-documents-subcolumn"
+            style="flex-grow: 1; flex-basis: 0"
+          >
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="archive-column-documents-subcolumn"
+            style="flex-grow: 1; flex-basis: 0"
+          >
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Takfoten p&aring; T&aring;ger&aring;sa kyrka.
+                  F&oumlrunders&ouml;kning inf&ouml;r rekonstruktionen av
+                  S&ouml;dra R&aring;da taklag.
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+
+            <div class="archive-column-document-item">
+              <div class="archive-column-document-icon"></div>
+              <div class="archive-column-document-info">
+                <div class="archive-column-document-title">
+                  Taklaget i S&ouml;dra R&aring;da
+                </div>
+                <div class="archive-column-document-author">
+                  F&ouml;rfattarnamn
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="foot" style="float: left; width: 100%"></div>
+</template>
