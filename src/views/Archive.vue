@@ -1,53 +1,21 @@
 <script setup>
-import "@/assets/archive.css";
 import { reactive } from "vue";
+import { find } from "@/strapi";
+import "@/assets/archive.css";
 
-const range = (n) => [...Array(n).keys()];
-
-async function getVideos() {
-  const response = await fetch("https://sodrarada.dh.gu.se/api/videos");
-  return await response.json();
-}
-const videos = reactive([]);
-getVideos().then((items) => videos.push(...items));
-
-async function getModels() {
-  const response = await fetch("https://sodrarada.dh.gu.se/api/models");
-  return await response.json();
-}
-const models = reactive([]);
-getModels().then((items) => models.push(...items));
-
-async function getImages(type) {
-  const params = new URLSearchParams({ type });
-  const response = await fetch(
-    "https://sodrarada.dh.gu.se/api/images?" + params
-  );
-  return await response.json();
+function remoteCollection(route, params) {
+  const collection = reactive([]);
+  find(route, params).then((items) => collection.push(...items));
+  return collection;
 }
 
-const photos = reactive([]);
-getImages("photograph").then((items) => photos.push(...items));
-
-const sketches = reactive([]);
-getImages("sketch").then((items) => sketches.push(...items));
-
-const blueprints = reactive([]);
-getImages("blueprint").then((items) => blueprints.push(...items));
-
-async function getDocuments() {
-  const response = await fetch("https://sodrarada.dh.gu.se/api/documents");
-  return await response.json();
-}
-const documents = reactive([]);
-getDocuments().then((items) => documents.push(...items));
-
-async function getKeywords() {
-  const response = await fetch("https://sodrarada.dh.gu.se/api/keywords");
-  return await response.json();
-}
-const keywords = reactive([]);
-getKeywords().then((items) => keywords.push(...items.slice(0, 10)));
+const videos = remoteCollection("videos");
+const models = remoteCollection("models");
+const photos = remoteCollection("images", { type: "photograph" });
+const sketches = remoteCollection("images", { type: "sketch" });
+const blueprints = remoteCollection("images", { type: "blueprint" });
+const documents = remoteCollection("documents");
+const keywords = remoteCollection("keywords");
 </script>
 
 <template>
@@ -93,7 +61,7 @@ getKeywords().then((items) => keywords.push(...items.slice(0, 10)));
 
     <div id="filter-container">
       <div class="filtertag activeTag">Hela arkivet</div>
-      <div v-for="keyword in keywords" class="filtertag">
+      <div v-for="keyword in keywords.slice(0, 10)" class="filtertag">
         #{{ keyword.label }}
       </div>
     </div>
