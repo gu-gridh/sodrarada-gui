@@ -6,8 +6,6 @@
                text-align: left;
                font-size: 180px;
                margin-top: 100px;
-
-
            }
 
            #archive-article-short {
@@ -157,6 +155,21 @@
                cursor: pointer;
            }
 
+           .all-button {
+            float: left;
+            margin-left: 10px;
+            margin-top: 4px;
+         padding:3px 5px 3px 5px;
+            border-radius: 5px;
+            border-width: 1px;
+            border-style: solid;
+            text-align: center;
+            line-height: 1.0;
+    color:black;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
            .info-button:hover {
                border-width: 1.5px;
                opacity: 1.0;
@@ -169,10 +182,11 @@
                flex-basis: 0;
                margin-right: 20px;
 
+
            }
 
            .archive-column-documents {
-               flex-grow: 3;
+               flex-grow: 2;
                flex-basis: 0;
                margin-left: 30px;
 
@@ -269,7 +283,7 @@
 
             
                font-size: 18px;
-               max-height: 22px;
+               max-height: 70px;
                overflow: hidden;
            }
 
@@ -299,21 +313,7 @@
 
            }
 
-           @media screen and (max-width: 950px) {
-            #archive-model {
-                position: absolute;
-                margin-top: 30px;
-                margin-left: 280px;
           
-                width: 550px;
-                height: 550px;
-                background-image: url(@/assets/graphics/3dplaceholder.png);
-                background-size: 550px, 550px;
-            
-               
-           
-                }
-        }
 
            @keyframes PosterFade {
                from {
@@ -352,23 +352,7 @@
                text-align: center;
            }
 
-           @media screen and (max-width: 950px) {
-            #archive-model-loader {
-            
-                margin-top: 150px;
-      
-                width: 200px;
-                height: 200px;
-                }
-
-                #archive-model-loader-label {
-
-            
-                    
-                    padding: 50px 20px 50px 20px;
            
-                }
-        }
 
            @keyframes pulse {
                0% {
@@ -383,3 +367,101 @@
                    transform: scale(0.95);
                }
            }
+
+           #blueprint-drawingcolumn{
+            display:none;
+        }
+
+
+        #drawingcolumn{
+         display:block;
+     }
+
+     #photohistcolumn{
+        display:block;
+    }
+
+    #photomoderncolumn{
+        display:block;
+    }
+
+    #photomixcolumn{
+        display:none;
+    }
+
+
+
+     #blueprintcolumn{
+         display:block;
+     }
+
+           @media screen and (max-width: 1300px) {
+           #blueprint-drawingcolumn{
+               display:block;
+           }
+
+
+           #drawingcolumn{
+            display:none;
+        }
+
+
+        #blueprintcolumn{
+            display:none;
+        }
+
+        #photohistcolumn{
+            display:none;
+        }
+    
+        #photomoderncolumn{
+            display:none;
+           
+        }
+    
+        #photomixcolumn{
+            display:block;
+        }
+    }
+
+    @media screen and (max-width: 950px) {
+        #archive-model {
+            position: absolute;
+            margin-top: 30px;
+            margin-left: 280px;
+      
+            width: 550px;
+            height: 550px;
+            background-image: url(@/assets/graphics/3dplaceholder.png);
+            background-size: 550px, 550px;       
+            }
+
+            #archive-model-loader {
+        
+                margin-top: 150px;
+      
+                width: 200px;
+                height: 200px;
+                }
+    
+                #archive-model-loader-label {
+    
+            
+                    
+                    padding: 50px 20px 50px 20px;
+           
+                }
+
+                #filmcolumn{
+                    display:none;
+                   
+                }
+
+                #documentcolumn{
+                    display:none;
+                   
+                }
+
+    }
+
+   

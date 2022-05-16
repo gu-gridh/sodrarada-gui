@@ -19,10 +19,7 @@ const keywords = remoteCollection("keywords");
 </script>
 
 <template>
-  <div
-    id="top-container"
-    style="margin-left: 100px; overflow: hidden; width: 100%"
-  >
+  <div id="top-container"  style="margin-left: 100px; overflow: hidden;">
     <div id="archive-model">
       <div id="archive-model-loader">
         <div id="archive-model-loader-label">
@@ -34,7 +31,7 @@ const keywords = remoteCollection("keywords");
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
   </div>
-  <div id="main-container" style="margin-left: 100px">
+  <div id="main-container" style="padding: 0px 30px 30px 100px">
     <router-link to="/"> <div id="back"></div></router-link>
     <div id="archive-article-short">
       Lorem ipsum dolor sit amet, consectetur <br />
@@ -69,32 +66,61 @@ const keywords = remoteCollection("keywords");
     <div
       id="archive-container"
       style="
-        margin-right: 30px;
+        padding: 0 50px 0 0;
         margin-top: 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
       "
     >
-      <div class="archive-column" id="filmcolumn">
+         <div class="archive-column" style="min-width:170px" id="photomoderncolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">Filmer</div>
-          <div class="info-button">i</div>
-        </div>
-        <div v-for="video in videos" class="archive-column-item"></div>
-
-        <div class="archive-column-top" style="margin-top: 30px">
-          <div class="archive-column-title">Digital modell</div>
-          <div class="info-button">i</div>
+          <div class="archive-column-title">Rekonstruktion</div>
+       <div class="all-button">Se alla</div>
+         
         </div>
 
-        <div v-for="model in models" class="archive-column-item"></div>
+        <div v-for="image in photos" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+            :alt="image.description"
+          />
+        </div>
       </div>
 
-      <div class="archive-column" id="blueprintcolumn">
+      <div class="archive-column"  style="min-width:160px" id="photohistcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Gamla kyrkan</div>
+       <div class="all-button">Se alla</div>
+        </div>
+
+        <div v-for="image in photos" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+            :alt="image.description"
+          />
+        </div>
+      </div>
+
+           <div class="archive-column"  style="min-width:160px" id="photomixcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Fotografier</div>
+       <div class="all-button">Se alla</div>
+         
+        </div>
+
+        <div v-for="image in photos" class="archive-column-item">
+          <img
+            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+            :alt="image.description"
+          />
+        </div>
+      </div>
+
+       <div class="archive-column" id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Ritningar</div>
-          <div class="info-button">i</div>
+         
         </div>
 
         <div v-for="image in blueprints" class="archive-column-item">
@@ -108,7 +134,7 @@ const keywords = remoteCollection("keywords");
       <div class="archive-column" id="drawingcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Teckningar</div>
-          <div class="info-button">i</div>
+
         </div>
 
         <div v-for="image in sketches" class="archive-column-item">
@@ -119,13 +145,14 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-      <div class="archive-column" id="photocolumn">
+
+      <div class="archive-column"  style="min-width:180px" id="blueprint-drawingcolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">Fotografier</div>
-          <div class="info-button">i</div>
+          <div class="archive-column-title">Ritningar & teckningar</div>
+
         </div>
 
-        <div v-for="image in photos" class="archive-column-item">
+        <div v-for="image in sketches" class="archive-column-item">
           <img
             :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
             :alt="image.description"
@@ -133,12 +160,32 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-      <div class="archive-column-documents">
+      <div class="archive-column" id="filmcolumn">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Filmer</div>
+    
+        </div>
+        <div v-for="video in videos" class="archive-column-item"></div>
+
+        <div class="archive-column-top" style="margin-top: 30px">
+          <div class="archive-column-title">Digital modell</div>
+       
+        </div>
+
+        <div v-for="model in models" class="archive-column-item"></div>
+      </div>
+
+     
+
+ 
+
+
+      <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">
-            Rapporter, artiklar och dokument
+            Dokument
           </div>
-          <div class="info-button">i</div>
+       
         </div>
 
         <div
@@ -159,15 +206,15 @@ const keywords = remoteCollection("keywords");
                   <div class="archive-column-document-title">
                     {{ document.title }}
                   </div>
-                  <div class="archive-column-document-author">
+                  <!-- <div class="archive-column-document-author">
                     F&ouml;rfattarnamn
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </a>
           </div>
 
-          <div
+          <!-- <div
             class="archive-column-documents-subcolumn"
             style="flex-grow: 1; flex-basis: 0"
           >
@@ -185,7 +232,7 @@ const keywords = remoteCollection("keywords");
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
