@@ -197,7 +197,6 @@
                height: 100px;
                width: 100%;
                transition: all 0.1s ease-in-out;
-               background-color: green;
                cursor:pointer;
 
            }
@@ -429,7 +428,7 @@
         .archive-column-top {
 
             margin-bottom: 10px;
-            height: 60px;
+            height: 65px;
         }
 
         .archive-column-title {
@@ -438,13 +437,14 @@
             font-weight: 100;
             text-align: left;
             font-size: 42px;
+            line-height:0.9;
         }
 
 
         .all-button {
             float: left;
             margin-left: 15px;
-            margin-top: 14px;
+            margin-top: 8px;
             font-size: 24px;
         }
 

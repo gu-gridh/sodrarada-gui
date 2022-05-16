@@ -10,22 +10,9 @@
 
     <div class="intro-container" style="">
       <div class="articletext" style="margin-top: 30px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        vel consectetur odio, vel semper felis. Quisque pharetra laoreet magna
-        sed luctus. Etiam ultricies vehicula leo, at molestie eros consectetur
-        a. Vivamus vestibulum consequat ex, sit amet lobortis felis gravida id.
-        Vestibulum suscipit, augue vitae rutrum sodales, ex nunc dignissim nunc,
-        non suscipit eros velit vestibulum mauris. Morbi blandit nisl eu
-        sagittis fringilla. Pellentesque a augue at libero blandit iaculis.
-        Proin ornare fringilla nunc, in accumsan lectus lobortis at.
-        Pellentesque in purus at augue rutrum ultricies. Maecenas ac facilisis
-        magna, vitae efficitur dui. In a enim ac neque varius posuere.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nullam tincidunt ligula ante, at hendrerit sapien
-        pharetra sed. Sed dapibus velit eget nibh tempor consectetur. Maecenas
-        porta nisi vel magna egestas, a malesuada ligula aliquam. In
-        sollicitudin convallis neque nec scelerisque. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus.
+        Södra Råda church was one of approximately twelve medieval log timber churches still preserved in Scandinavia, and was recognised foremost for its distinctive wall paintings, making it an important destination point for tourism in the region. 
+        By the late nineteenth century the church had already been deconsecrated and transformed from a place of worship into a heritage museum. As such the building continued to serve the local community for events like concerts, weddings, and baptisms. 
+        <p>Being an important node in the local community, the National Heritage Board took a decision that the church should be reconstructed as a pedagogical example to enhance craft practice and historical knowledge of medieval churches. The full-scale reconstruction of the timber building now  erected on the site focuses on the potential benefits of advancing research and developing skills in historical woodcraft procedures. </p>
       </div>
     </div>
 
@@ -312,7 +299,7 @@
           2002-2021
         </div>
       </div>
-      <div class="timeline-main" style="height: 180px">
+      <div class="timeline-main" style="height: 200px">
         <div class="timeline-picture">
           <img
             src="@/assets/graphics/2021still.jpg"
@@ -355,7 +342,7 @@
 
     <div class="timeline-container" style="">
       <div class="timeline-leftside">
-        <div class="timeline-date">2021</div>
+        <div class="timeline-date">2022</div>
       </div>
       <div class="timeline-main">
         <div class="timeline-circle" id="timeline-circle-2021" style="">

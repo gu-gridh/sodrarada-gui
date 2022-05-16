@@ -68,7 +68,7 @@ const keywords = remoteCollection("keywords");
     <div
       id="archive-container"
       style="
-        padding: 0 50px 0 0;
+        padding: 30px 50px 0 0;
         margin-top: 30px;
         display: flex;
         flex-direction: row;
@@ -212,7 +212,7 @@ const keywords = remoteCollection("keywords");
       <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">
-            Dokument
+            Projektdokument
           </div>
        
         </div>
