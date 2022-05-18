@@ -57,13 +57,14 @@ const keywords = remoteCollection("keywords");
       fringilla nunc, in accumsan lectus lobortis at. Pellentesque in purus at
       augue rutrum ultricies.
     </div>
-
+  <div id="filter-section" style="width:100%; float:left;">
     <div id="filter-container">
       <div class="filtertag activeTag">Hela arkivet</div>
       <div v-for="keyword in keywords.slice(0, 10)" class="filtertag">
         #{{ keyword.label }}
       </div>
     </div>
+      </div>
 
     <div
       id="archive-container"
@@ -148,7 +149,7 @@ const keywords = remoteCollection("keywords");
 
        <div class="archive-column" id="blueprintcolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">Ritningar</div>
+          <div class="archive-column-title">Uppritningar</div>
          
         </div>
 
@@ -165,7 +166,7 @@ const keywords = remoteCollection("keywords");
 
       <div class="archive-column"  style="min-width:180px" id="blueprint-drawingcolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">Avbildningar & ritningar</div>
+          <div class="archive-column-title">Uppritningar</div>
 
         </div>
  <div v-for="image in paintings" class="archive-column-item">
