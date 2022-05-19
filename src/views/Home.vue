@@ -59,7 +59,7 @@
               alt="Panorama: Navet"
               class="timeline-infographics-image-secondary"
             />
-            <div class="timeline-infographics-label" style="">Navet</div>
+            <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics">
@@ -105,34 +105,8 @@
     </div>
 
     <div class="timeline-container" style="margin-top: 0px">
-      <div class="timeline-leftside" style="">
-        <div class="timeline-date-indented" style="">1600</div>
-      </div>
-      <div class="timeline-main" style="height: 150px">
-        <div class="timeline-picture">
-          <img
-            src="@/assets/graphics/painting2.jpg"
-            alt=""
-            class="timeline-infographics-image"
-          />
-        </div>
-      </div>
-      <div class="timeline-rightside">
-        <div class="timeline-info-indented" style="">
-          Pellentesque vel consectetur odio, vel semper felis. Quisque pharetra
-          laoreet magna sed luctus.
-        </div>
-      </div>
-      <div></div>
-    </div>
-
-    <div class="timeline-container">
-      <div class="timeline"></div>
-    </div>
-
-    <div class="timeline-container" style="margin-top: 0px">
       <div class="timeline-leftside">
-        <div class="timeline-date">1750</div>
+        <div class="timeline-date">1700</div>
       </div>
       <div class="timeline-main">
         <div id="timeline-circle-1750" class="timeline-circle">
@@ -156,7 +130,7 @@
               alt="Panorama: Navet"
               class="timeline-infographics-image-secondary"
             />
-            <div class="timeline-infographics-label" style="">Navet</div>
+            <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics" style="">
@@ -366,7 +340,7 @@
               alt=""
               class="timeline-infographics-image-secondary"
             />
-            <div class="timeline-infographics-label" style="">Navet</div>
+            <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics" style="">
