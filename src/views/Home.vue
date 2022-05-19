@@ -40,7 +40,7 @@
       <div class="timeline-main">
         <div class="timeline-circle" id="timeline-circle-1326">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <source src="@/assets/graphics/1300animation.mp4" type="video/mp4" />
             <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
@@ -137,7 +137,7 @@
       <div class="timeline-main">
         <div id="timeline-circle-1750" class="timeline-circle">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <!-- <source src="@/assets/graphics/1326.mp4" type="video/mp4" /> -->
+            <source src="@/assets/graphics/1700animation.mp4" type="video/mp4" />
             <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
