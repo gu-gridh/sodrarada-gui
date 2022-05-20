@@ -198,7 +198,7 @@ const keywords = remoteCollection("keywords");
         <div v-for="video in videos" class="archive-column-item"></div>
 
         <div class="archive-column-top" style="margin-top: 30px">
-          <div class="archive-column-title">Digital modell</div>
+          <div class="archive-column-title">Digitala modeller</div>
        
         </div>
 

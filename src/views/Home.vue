@@ -55,7 +55,7 @@
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1300navepanorama.jpg"
               alt="Panorama: Navet"
               class="timeline-infographics-image-secondary"
             />
@@ -64,7 +64,7 @@
 
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1300chancelpanorama.jpg"
               alt="Panorama: Koret"
               class="timeline-infographics-image-secondary"
             />
@@ -82,10 +82,10 @@
       <div class="timeline-leftside" style="">
         <div class="timeline-date-indented" style="">1400</div>
       </div>
-      <div class="timeline-main" style="height: 100px">
+      <div class="timeline-main" style="height: 150px">
         <div class="timeline-picture">
           <img
-            src="@/assets/graphics/panorama3.jpg"
+            src="@/assets/graphics/amundicon.jpg"
             class="timeline-infographics-image"
           />
         </div>
@@ -126,7 +126,7 @@
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1700navepanorama.jpg"
               alt="Panorama: Navet"
               class="timeline-infographics-image-secondary"
             />
@@ -135,7 +135,7 @@
 
           <div class="timeline-infographics" style="">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1700chancelpanorama.jpg"
               alt="Panorama: Koret"
               class="timeline-infographics-image-secondary"
             />
@@ -181,10 +181,10 @@
       <div class="timeline-leftside" style="">
         <div class="timeline-date-indented" style="">1909</div>
       </div>
-      <div class="timeline-main" style="height: 100px">
+      <div class="timeline-main" style="height: 150px">
         <div class="timeline-picture">
           <img
-            src="@/assets/graphics/painting4.jpg"
+            src="@/assets/graphics/1909.jpg"
             alt=""
             class="timeline-infographics-image"
           />
@@ -227,7 +227,7 @@
         >
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1995hedlundpanorama.jpg"
               alt=""
               class="timeline-infographics-image-secondary"
             />
@@ -276,7 +276,7 @@
       <div class="timeline-main" style="height: 200px">
         <div class="timeline-picture">
           <img
-            src="@/assets/graphics/2021still.jpg"
+            src="@/assets/graphics/rek1.jpg"
             alt=""
             class="timeline-infographics-image"
           />
@@ -293,7 +293,7 @@
         >
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/2021still.jpg"
+              src="@/assets/graphics/rek2.jpg"
               alt=""
               class="timeline-infographics-image-secondary"
             />
@@ -301,7 +301,7 @@
 
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/2021still.jpg"
+              src="@/assets/graphics/rek3.jpg"
               alt=""
               class="timeline-infographics-image-secondary"
             />
@@ -336,7 +336,7 @@
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1300navepanorama.jpg"
               alt=""
               class="timeline-infographics-image-secondary"
             />
@@ -345,7 +345,7 @@
 
           <div class="timeline-infographics" style="">
             <img
-              src="@/assets/graphics/panorama3.jpg"
+              src="@/assets/graphics/1300chancelpanorama.jpg"
               alt=""
               class="timeline-infographics-image-secondary"
             />
