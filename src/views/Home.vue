@@ -1,9 +1,11 @@
 <script setup></script>
 
+
+
 <template>
-  <div id="site-container" style="overflow-x: hidden; width: 100%">
-    <div id="topgraphics-bg" style="">
-      <div id="topgraphics" style=""></div>
+  <div id="site-container" style="overflow-x: hidden; width: 100%;">
+    <div id="topgraphics-bg" style="pointer-events: none;">
+      <div id="topgraphics" style="pointer-events: none;"></div>
     </div>
 
     <div id="srlogotype" style=""></div>
@@ -16,12 +18,14 @@
       </div>
     </div>
 
-    <a href="/archive">
+  <router-link to="/archive">
       <div class="label-image" style=""></div>
-    </a>
+ </router-link>
     <div class="label" style="margin-top: 5px; cursor: pointer">
-      <a href="archive.html">G&aring; till arkivet</a>
+       <router-link to="/archive">G&aring; till arkivet</router-link>
+  
     </div>
+
 
     <div
       class="label"
@@ -30,6 +34,7 @@
     >
       Rekonstruktionen
     </div>
+
 
     <div class="scroll bounce" style=""></div>
 
@@ -359,32 +364,13 @@
       <router-link to="/archive">Arkivet</router-link>
     </div>
   </div>
-  <div
-    style="
-      font-family: 'Teko', sans-serif;
-      font-weight: 300;
-      color: rgba(0, 0, 0, 0);
-      height: 0px;
-      overflow: hidden;
-    "
-  >
-    -
-  </div>
-
-  <div
-    style="
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 100;
-      color: rgba(0, 0, 0, 0);
-      height: 0px;
-      overflow: hidden;
-    "
-  >
-    -
-  </div>
+  
 
   <div id="foot" style="float: left; width: 100%">-</div>
+
+   
 </template>
+
 
 <style scoped>
 img {
