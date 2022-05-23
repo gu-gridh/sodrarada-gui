@@ -1,13 +1,7 @@
 <script setup>
-import { reactive } from "vue";
-import { find } from "@/strapi";
+import { remoteCollection } from "@/strapi";
 import "@/assets/archive.css";
 
-function remoteCollection(route, params) {
-  const collection = reactive([]);
-  find(route, params).then((items) => collection.push(...items));
-  return collection;
-}
 
 const videos = remoteCollection("videos");
 const models = remoteCollection("models");
@@ -15,13 +9,15 @@ const photos = remoteCollection("images", { type: "photograph" });
 const sketches = remoteCollection("images", { type: "sketch" });
 const blueprints = remoteCollection("images", { type: "blueprint" });
 const paintings = remoteCollection("images", { type: "painting" });
-const historical_photograph = remoteCollection("images", { type: "historical_photograph" });
+const historical_photograph = remoteCollection("images", {
+  type: "historical_photograph",
+});
 const documents = remoteCollection("documents");
 const keywords = remoteCollection("keywords");
 </script>
 
 <template>
-  <div id="top-container"  style="margin-left: 100px; overflow: hidden;">
+  <div id="top-container" style="margin-left: 100px; overflow: hidden">
     <div id="archive-model">
       <div id="archive-model-loader">
         <div id="archive-model-loader-label">
@@ -57,14 +53,14 @@ const keywords = remoteCollection("keywords");
       fringilla nunc, in accumsan lectus lobortis at. Pellentesque in purus at
       augue rutrum ultricies.
     </div>
-  <div id="filter-section" style="width:100%; float:left;">
-    <div id="filter-container">
-      <div class="filtertag activeTag">Hela arkivet</div>
-      <div v-for="keyword in keywords.slice(0, 10)" class="filtertag">
-        #{{ keyword.label }}
+    <div id="filter-section" style="width: 100%; float: left">
+      <div id="filter-container">
+        <div class="filtertag activeTag">Hela arkivet</div>
+        <div v-for="keyword in keywords.slice(0, 10)" class="filtertag">
+          #{{ keyword.label }}
+        </div>
       </div>
     </div>
-      </div>
 
     <div
       id="archive-container"
@@ -76,11 +72,14 @@ const keywords = remoteCollection("keywords");
         flex-wrap: nowrap;
       "
     >
-         <div class="archive-column" style="min-width:170px" id="photomoderncolumn">
+      <div
+        class="archive-column"
+        style="min-width: 170px"
+        id="photomoderncolumn"
+      >
         <div class="archive-column-top">
           <div class="archive-column-title">Rekonstruktion</div>
-       <div class="all-button">Se alla</div>
-         
+          <div class="all-button">Se alla</div>
         </div>
 
         <div v-for="image in photos" class="archive-column-item">
@@ -91,10 +90,10 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-      <div class="archive-column"  style="min-width:160px" id="photohistcolumn">
+      <div class="archive-column" style="min-width: 160px" id="photohistcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Historisk</div>
-       <div class="all-button">Se alla</div>
+          <div class="all-button">Se alla</div>
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
@@ -105,11 +104,10 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-           <div class="archive-column"  style="min-width:160px" id="photomixcolumn">
+      <div class="archive-column" style="min-width: 160px" id="photomixcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Fotografier</div>
-       <div class="all-button">Se alla</div>
-         
+          <div class="all-button">Se alla</div>
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
@@ -126,12 +124,11 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-        <div class="archive-column" id="drawingcolumn">
+      <div class="archive-column" id="drawingcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Avbildningar</div>
-
         </div>
- <div v-for="image in paintings" class="archive-column-item">
+        <div v-for="image in paintings" class="archive-column-item">
           <img
             :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
             :alt="image.description"
@@ -144,13 +141,11 @@ const keywords = remoteCollection("keywords");
             :alt="image.description"
           />
         </div>
-        
       </div>
 
-       <div class="archive-column" id="blueprintcolumn">
+      <div class="archive-column" id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
-         
         </div>
 
         <div v-for="image in blueprints" class="archive-column-item">
@@ -161,21 +156,21 @@ const keywords = remoteCollection("keywords");
         </div>
       </div>
 
-    
-
-
-      <div class="archive-column"  style="min-width:180px" id="blueprint-drawingcolumn">
+      <div
+        class="archive-column"
+        style="min-width: 180px"
+        id="blueprint-drawingcolumn"
+      >
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
-
         </div>
- <div v-for="image in paintings" class="archive-column-item">
+        <div v-for="image in paintings" class="archive-column-item">
           <img
             :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
             :alt="image.description"
           />
         </div>
-        
+
         <div v-for="image in sketches" class="archive-column-item">
           <img
             :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -193,29 +188,19 @@ const keywords = remoteCollection("keywords");
       <div class="archive-column" id="filmcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Filmer</div>
-    
         </div>
         <div v-for="video in videos" class="archive-column-item"></div>
 
         <div class="archive-column-top" style="margin-top: 30px">
           <div class="archive-column-title">Digitala modeller</div>
-       
         </div>
 
         <div v-for="model in models" class="archive-column-item"></div>
       </div>
 
-     
-
- 
-
-
       <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">
-            Projektdokument
-          </div>
-       
+          <div class="archive-column-title">Projektdokument</div>
         </div>
 
         <div
