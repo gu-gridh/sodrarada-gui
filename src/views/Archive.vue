@@ -2,7 +2,6 @@
 import { remoteCollection } from "@/strapi";
 import "@/assets/archive.css";
 
-
 const videos = remoteCollection("videos");
 const models = remoteCollection("models");
 const photos = remoteCollection("images", { type: "photograph" });
@@ -56,7 +55,7 @@ const keywords = remoteCollection("keywords");
     <div id="filter-section" style="width: 100%; float: left">
       <div id="filter-container">
         <div class="filtertag activeTag">Hela arkivet</div>
-        <div v-for="keyword in keywords.slice(0, 10)" class="filtertag">
+        <div v-for="keyword in keywords" class="filtertag">
           #{{ keyword.label }}
         </div>
       </div>
