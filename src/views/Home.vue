@@ -51,7 +51,7 @@
         <div class="timeline-date">1326</div>
       </div>
       <div class="timeline-main">
-        <div class="timeline-circle" id="timeline-circle-1326">
+        <div class="timeline-circle" id="timeline-circle-1326" style="">
           <video width="500" height="500" autoplay loop muted playsinline>
             <source
               src="@/assets/graphics/1300animation.mp4"
