@@ -1,6 +1,5 @@
 #metadata {
     float: left;
-    width: 100%;
     padding: 20px 0 100px 100px;
    
 }
@@ -23,24 +22,12 @@
     z-index: 2000;
 }
 
-@media screen and (max-width: 950px) {
-    #item-back {
-        margin-top: 72px;
-        margin-left: 20px;
-        height: 40px;
-        width: 40px;
-        background: url(graphics/interface/back-black.png);
-        background-size: 30px 30px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
 
 @media screen and (max-width: 800px) {
     #item-back {
         position: absolute;
+        margin-left: 0px;
         margin-top: 15px;
-        margin-left: 10%;
         height: 50px;
         width: 50px;
         background: url(graphics/interface/back-black.png);
@@ -56,7 +43,8 @@
 
 
 .section-title {
-    width: 80%;
+
+    display:block;
     height: auto;
     text-align: left;
     margin-top: 50px;
@@ -178,13 +166,11 @@ float: left;
 }
 
 .meta-container {
-    width: 550px;
+    float:left;
+    width: auto;
+    padding: 0 30px 0 0;
+    margin-right:30px;
     margin-top: 20px;
-    column-count: 2;
-    column-gap: 40px;
-    column-rule-style: solid;
-    column-rule-width: 1px;
-    column-rule-color: grey;
     font-size: 18px;
     line-height: 2.0;
 }
@@ -194,39 +180,13 @@ float: left;
         color: #4181a1;
     }
 
-.meta-container-solo {
-    width: 550px;
-    margin-top: 20px;
-    margin-left: 10%;
-    column-count: 1;
-    column-gap: 40px;
-    column-rule-style: solid;
-    column-rule-width: 1px;
-    column-rule-color: grey;
-    font-size: 18px;
-    line-height: 2.0;
-}
 
-    .meta-container-solo span {
-        color: #66CCFF;
-    }
 
 @media screen and (max-width: 800px) {
     .meta-container {
         width: 550px;
         margin-top: 20px;
-        margin-left: 10%;
-        column-count: 1;
-        font-size: 32px;
-        line-height: 2.0;
-    }
-}
 
-@media screen and (max-width: 800px) {
-    .meta-container-solo {
-        width: 550px;
-        margin-top: 20px;
-        margin-left: 10%;
         column-count: 1;
         font-size: 32px;
         line-height: 2.0;
@@ -235,14 +195,13 @@ float: left;
 
 
 .download-container {
-    width: auto;
-    margin-top: 10px;
+    display:block;
+    float:left;
+    margin-top: 0px;
 }
 
 .download-button {
     cursor: pointer;
- 
- 
     background: url(graphics/interface/download-button.png);
     background-size: 35px 35px;
     background-repeat: no-repeat;
