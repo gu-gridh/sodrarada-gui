@@ -1,31 +1,40 @@
 <script setup></script>
 
-
-
 <template>
-  <div id="site-container" style="overflow-x: hidden; width: 100%;">
-    <div id="topgraphics-bg" style="pointer-events: none;">
-      <div id="topgraphics" style="pointer-events: none;"></div>
+  <div id="site-container" style="overflow-x: hidden; width: 100%">
+    <div id="topgraphics-bg" style="pointer-events: none">
+      <div id="topgraphics" style="pointer-events: none"></div>
     </div>
 
     <div id="srlogotype" style=""></div>
 
     <div class="intro-container" style="">
       <div class="articletext" style="margin-top: 30px">
-        Södra Råda church was one of approximately twelve medieval log timber churches still preserved in Scandinavia, and was recognised foremost for its distinctive wall paintings, making it an important destination point for tourism in the region. 
-        By the late nineteenth century the church had already been deconsecrated and transformed from a place of worship into a heritage museum. As such the building continued to serve the local community for events like concerts, weddings, and baptisms. 
-        <p>Being an important node in the local community, the National Heritage Board took a decision that the church should be reconstructed as a pedagogical example to enhance craft practice and historical knowledge of medieval churches. The full-scale reconstruction of the timber building now  erected on the site focuses on the potential benefits of advancing research and developing skills in historical woodcraft procedures. </p>
+        Södra Råda church was one of approximately twelve medieval log timber
+        churches still preserved in Scandinavia, and was recognised foremost for
+        its distinctive wall paintings, making it an important destination point
+        for tourism in the region. By the late nineteenth century the church had
+        already been deconsecrated and transformed from a place of worship into
+        a heritage museum. As such the building continued to serve the local
+        community for events like concerts, weddings, and baptisms.
+        <p>
+          Being an important node in the local community, the National Heritage
+          Board took a decision that the church should be reconstructed as a
+          pedagogical example to enhance craft practice and historical knowledge
+          of medieval churches. The full-scale reconstruction of the timber
+          building now erected on the site focuses on the potential benefits of
+          advancing research and developing skills in historical woodcraft
+          procedures.
+        </p>
       </div>
     </div>
 
-  <router-link to="/archive">
+    <router-link to="/archive">
       <div class="label-image" style=""></div>
- </router-link>
+    </router-link>
     <div class="label" style="margin-top: 5px; cursor: pointer">
-       <router-link to="/archive">G&aring; till arkivet</router-link>
-  
+      <router-link to="/archive">G&aring; till arkivet</router-link>
     </div>
-
 
     <div
       class="label"
@@ -34,7 +43,6 @@
     >
       Rekonstruktionen
     </div>
-
 
     <div class="scroll bounce" style=""></div>
 
@@ -45,7 +53,10 @@
       <div class="timeline-main">
         <div class="timeline-circle" id="timeline-circle-1326">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="@/assets/graphics/1300animation.mp4" type="video/mp4" />
+            <source
+              src="@/assets/graphics/1300animation.mp4"
+              type="video/mp4"
+            />
             <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
@@ -59,20 +70,24 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <img
-              src="@/assets/graphics/1300navepanorama.jpg"
-              alt="Panorama: Navet"
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1300navepanorama.jpg"
+                alt="Panorama: Navet"
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics">
-            <img
-              src="@/assets/graphics/1300chancelpanorama.jpg"
-              alt="Panorama: Koret"
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1300chancelpanorama.jpg"
+                alt="Panorama: Koret"
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -116,7 +131,10 @@
       <div class="timeline-main">
         <div id="timeline-circle-1750" class="timeline-circle">
           <video width="500" height="500" autoplay loop muted playsinline>
-            <source src="@/assets/graphics/1700animation.mp4" type="video/mp4" />
+            <source
+              src="@/assets/graphics/1700animation.mp4"
+              type="video/mp4"
+            />
             <!-- <source src="@/assets/graphics/1326.webm" type="video/webm" /> -->
           </video>
         </div>
@@ -130,20 +148,24 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <img
-              src="@/assets/graphics/1700navepanorama.jpg"
-              alt="Panorama: Navet"
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1700navepanorama.jpg"
+                alt="Panorama: Navet"
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics" style="">
-            <img
-              src="@/assets/graphics/1700chancelpanorama.jpg"
-              alt="Panorama: Koret"
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1700chancelpanorama.jpg"
+                alt="Panorama: Koret"
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -231,11 +253,13 @@
           style="width: 150px"
         >
           <div class="timeline-infographics">
-            <img
-              src="@/assets/graphics/1995hedlundpanorama.jpg"
-              alt=""
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1995hedlundpanorama.jpg"
+                alt=""
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -340,20 +364,24 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <img
-              src="@/assets/graphics/1300navepanorama.jpg"
-              alt=""
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1300navepanorama.jpg"
+                alt=""
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Långskeppet</div>
           </div>
 
           <div class="timeline-infographics" style="">
-            <img
-              src="@/assets/graphics/1300chancelpanorama.jpg"
-              alt=""
-              class="timeline-infographics-image-secondary"
-            />
+            <router-link to="/panorama/107">
+              <img
+                src="@/assets/graphics/1300chancelpanorama.jpg"
+                alt=""
+                class="timeline-infographics-image-secondary"
+              />
+            </router-link>
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
         </div>
@@ -364,13 +392,9 @@
       <router-link to="/archive">Arkivet</router-link>
     </div>
   </div>
-  
 
   <div id="foot" style="float: left; width: 100%">-</div>
-
-   
 </template>
-
 
 <style scoped>
 img {
