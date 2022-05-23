@@ -47,7 +47,7 @@ const personName = (person) =>
         {{ image.description }}
       </div>
 
-      <div class="section-title">Specifikationer</div>
+      <div class="meta-section-title">Specifikationer</div>
 
       <div class="meta-container">
         Datering: <span>{{ image.date && image.date.year }}</span> <br />
