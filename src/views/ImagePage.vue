@@ -40,18 +40,21 @@ const personName = (person) =>
         {{ image.description }}
       </div>
 
-      <div class="section-title">Specifikationer</div>
+      <div class="meta-section-title">Specifikationer</div>
 
       <div class="meta-container">
         Datering: <span>{{ image.date && image.date.year }}</span> <br />
         Upplösning:
         <span>{{ image.image.width }} x {{ image.image.height }}</span> <br />
+          </div>
+        <div class="meta-container">
         Skapare: <span>{{ image.creator.map(personName).join(", ") }}</span>
         <br />
         Licens: <span>Creative Commons 4.0 / PD</span> <br />
       </div>
 
-      <div id="filter-container">
+
+      <div id="filter-container" style="width:100%; float:left;">
         <div
           v-for="keyword in image.keywords"
           :key="keyword.id"
@@ -62,14 +65,14 @@ const personName = (person) =>
       </div>
 
       <a :href="'https://sodrarada.dh.gu.se/api' + image.image.url">
-        <div class="download-container">
+        <div class="download-container" style="width:100%; float:left;">
           <div class="download-button"></div>
           <div class="download-label">Ladda ner bild</div>
         </div>
       </a>
       <br />
 
-      <div class="section-title" style="margin-top: 70px">Relaterat</div>
+      <div class="section-title" style="margin-top: 70px; width:100%; float:left;">Relaterat</div>
 
       <div class="related-gallery"></div>
     </div>
