@@ -36,9 +36,9 @@ const personName = (person) =>
     </div>
 
     <div id="metadata">
-      <a href="../snowhill.html">
+      <router-link to="/">
         <div id="item-back"></div>
-      </a>
+      </router-link>
 
       <div class="section-title">{{ image.subject }}</div>
 
@@ -60,7 +60,7 @@ const personName = (person) =>
         Licens: <span>Creative Commons 4.0 / PD</span> <br />
       </div>
 
-      <div id="filter-container" style="width:100%; float:left;">
+      <div id="filter-container" style="width: 100%; float: left">
         <div
           v-for="keyword in image.keywords"
           :key="keyword.id"
@@ -76,10 +76,15 @@ const personName = (person) =>
           <div class="download-label">Ladda ner bild</div>
         </div>
       </a>
-      <br>
-       <br>
+      <br />
+      <br />
 
-      <div class="section-title" style="margin-top: 70px; width:100%; float:left;">Relaterat</div>
+      <div
+        class="section-title"
+        style="margin-top: 70px; width: 100%; float: left"
+      >
+        Relaterat
+      </div>
 
       <div class="related-gallery"></div>
     </div>
