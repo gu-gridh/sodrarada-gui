@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import Archive from "@/views/Archive.vue";
 import ImagePage from "@/views/ImagePage.vue";
-import PanoramaPage from "@/views/PanoramaPage.vue";
 
 const routes = [
   {
