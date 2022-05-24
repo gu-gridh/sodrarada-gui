@@ -1,14 +1,26 @@
 <script setup>
+import { ref, watch } from "vue";
 import { remoteObject } from "../strapi";
+import "pannellum";
+import "pannellum/build/pannellum.css";
 import "@/assets/item.css";
-import "@/assets/pannellum/pannellum.js";
-import "@/assets/pannellum/pannellum.css";
 
 const props = defineProps(["id"]);
-
 const image = remoteObject(`images/${props.id}`);
+const panoramaRef = ref(null);
 
-const pannellum = window.pannellum;
+// Postpone panorama until the container div is created.
+watch(panoramaRef, () => {
+  window.pannellum.viewer(panoramaRef.value, {
+    type: "equirectangular",
+    autoLoad: true,
+    autoRotate: false,
+    yaw: -0,
+    pitch: 30,
+    showZoomCtrl: false,
+    panorama: "https://sodrarada.dh.gu.se/api" + image.image.url,
+  });
+});
 
 const personName = (person) =>
   [person.firstname, person.lastname].filter(Boolean).join(" ");
@@ -20,23 +32,10 @@ const personName = (person) =>
     <div id="item-top-video" style="display: none"></div>
 
     <div id="item-top-pano">
-      <div id="panorama">
-        <img :src="'https://sodrarada.dh.gu.se/api' + image.image.url" alt="" />
-      </div>
-      <!-- {{
-        pannellum.viewer("panorama", {
-          type: "equirectangular",
-          autoLoad: true,
-          autoRotate: false,
-          yaw: -0,
-          pitch: 30,
-          showZoomCtrl: false,
-          panorama: "https://sodrarada.dh.gu.se/api" + image.image.url,
-        })
-      }} -->
+      <div id="panorama" ref="panoramaRef"></div>
     </div>
 
-    <div v-if="pannellum" id="metadata">
+    <div id="metadata">
       <a href="../snowhill.html">
         <div id="item-back"></div>
       </a>

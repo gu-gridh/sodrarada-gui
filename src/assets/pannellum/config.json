@@ -1,7 +1,0 @@
- "type": "equirectangular",
-  "autoLoad": true,
-  "autoRotate": -2,
-   "yaw": -270,
-  "compass": true,
-   "northOffset": 247.5,
-   "showZoomCtrl": false,

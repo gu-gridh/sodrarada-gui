@@ -1092,6 +1092,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pannellum@npm:^2.5.6":
+  version: 2.5.6
+  resolution: "pannellum@npm:2.5.6"
+  checksum: 689cdde40d55944ccdd2605215f7addaaca10f099970db7ef366f2084f90e35bd1d0e09040ce9e8eb46bc79b49108b0be662a5b4d22be265239c1787d75b77f1
+  languageName: node
+  linkType: hard
+
 "path-is-absolute@npm:^1.0.0":
   version: 1.0.1
   resolution: "path-is-absolute@npm:1.0.1"
@@ -1282,6 +1289,7 @@ __metadata:
   resolution: "sodrarada-gui@workspace:."
   dependencies:
     "@vitejs/plugin-vue": ^2.3.3
+    pannellum: ^2.5.6
     vite: ^2.9.9
     vue: ^3.2.25
     vue-router: 4
