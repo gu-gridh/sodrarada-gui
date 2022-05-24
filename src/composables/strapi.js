@@ -29,12 +29,12 @@ export default function useStrapi() {
 
     // Make request and repeat whenever the keyword filter changes.
     watchEffect(async () => {
+      const paramsFiltered = { ...params };
       if (store.keywordFilter) {
-        params["keywords.id"] = store.keywordFilter;
+        paramsFiltered["keywords.id"] = store.keywordFilter;
       }
       collection.splice(0);
-      const items = await find(route, params);
-      console.log(items);
+      const items = await find(route, paramsFiltered);
       collection.push(...items);
     });
 
