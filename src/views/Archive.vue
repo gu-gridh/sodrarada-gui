@@ -1,18 +1,30 @@
 <script setup>
-import { remoteCollection } from "@/strapi";
+import useStore from "@/store";
+import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
 
-const videos = remoteCollection("videos");
-const models = remoteCollection("models");
-const photos = remoteCollection("images", { type: "photograph" });
-const sketches = remoteCollection("images", { type: "sketch" });
-const blueprints = remoteCollection("images", { type: "blueprint" });
-const paintings = remoteCollection("images", { type: "painting" });
-const historical_photograph = remoteCollection("images", {
+const { remoteCollection, remoteFilteredCollection } = useStrapi();
+const store = useStore();
+
+const keywords = remoteCollection("keywords");
+const videos = remoteFilteredCollection("videos");
+const models = remoteFilteredCollection("models");
+const photos = remoteFilteredCollection("images", {
+  type: "photograph",
+});
+const sketches = remoteFilteredCollection("images", {
+  type: "sketch",
+});
+const blueprints = remoteFilteredCollection("images", {
+  type: "blueprint",
+});
+const paintings = remoteFilteredCollection("images", {
+  type: "painting",
+});
+const historical_photograph = remoteFilteredCollection("images", {
   type: "historical_photograph",
 });
-const documents = remoteCollection("documents");
-const keywords = remoteCollection("keywords");
+const documents = remoteFilteredCollection("documents");
 </script>
 
 <template>
@@ -54,8 +66,19 @@ const keywords = remoteCollection("keywords");
     </div>
     <div id="filter-section" style="width: 100%; float: left">
       <div id="filter-container">
-        <div class="filtertag activeTag">Hela arkivet</div>
-        <div v-for="keyword in keywords" class="filtertag">
+        <div
+          class="filtertag"
+          :class="{ activeTag: !store.keywordFilter }"
+          @click="store.filterByKeywordId(null)"
+        >
+          Hela arkivet
+        </div>
+        <div
+          v-for="keyword in keywords"
+          class="filtertag"
+          :class="{ activeTag: store.keywordFilter == keyword.id }"
+          @click="store.filterByKeywordId(keyword.id)"
+        >
           #{{ keyword.label }}
         </div>
       </div>

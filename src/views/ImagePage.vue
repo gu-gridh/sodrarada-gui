@@ -1,11 +1,14 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import { remoteObject } from "../strapi";
+import useStrapi from "@/composables/strapi";
+import useStore from "@/store";
 import Panorama from "@/components/Panorama.vue";
 import "@/assets/item.css";
 
 const props = defineProps(["imageType"]);
 const { params } = useRoute();
+const { remoteObject } = useStrapi();
+const store = useStore();
 const { go } = useRouter();
 const image = remoteObject(`images/${params.id}`);
 
