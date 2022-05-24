@@ -82,10 +82,12 @@ const keywords = remoteCollection("keywords");
         </div>
 
         <div v-for="image in photos" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 
@@ -96,10 +98,12 @@ const keywords = remoteCollection("keywords");
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 
@@ -110,16 +114,20 @@ const keywords = remoteCollection("keywords");
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
         <div v-for="image in photos" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 
@@ -128,17 +136,21 @@ const keywords = remoteCollection("keywords");
           <div class="archive-column-title">Avbildningar</div>
         </div>
         <div v-for="image in paintings" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
 
         <div v-for="image in sketches" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 
@@ -148,10 +160,12 @@ const keywords = remoteCollection("keywords");
         </div>
 
         <div v-for="image in blueprints" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 
@@ -164,23 +178,29 @@ const keywords = remoteCollection("keywords");
           <div class="archive-column-title">Uppritningar</div>
         </div>
         <div v-for="image in paintings" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
 
         <div v-for="image in sketches" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
         <div v-for="image in blueprints" class="archive-column-item">
-          <img
-            :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-            :alt="image.description"
-          />
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
 

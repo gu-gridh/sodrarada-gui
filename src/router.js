@@ -6,10 +6,28 @@ import ImagePage from "@/views/ImagePage.vue";
 import PanoramaPage from "@/views/PanoramaPage.vue";
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/archive", component: Archive },
-  { path: "/image/:id", component: ImagePage, props: true },
-  { path: "/panorama/:id", component: PanoramaPage, props: true },
+  {
+    path: "/",
+    component: Home,
+  },
+  {
+    path: "/archive",
+    component: Archive,
+  },
+  {
+    path: "/image/:id",
+    component: ImagePage,
+    props: {
+      imageType: "image",
+    },
+  },
+  {
+    path: "/panorama/:id",
+    component: ImagePage,
+    props: {
+      imageType: "panorama",
+    },
+  },
 ];
 
 const router = createRouter({
