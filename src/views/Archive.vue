@@ -9,29 +9,43 @@ const LIMIT = 20;
 const { remoteCollection, remoteFilteredCollection } = useStrapi();
 const store = useStore();
 
+// Keywords
 const keywords = remoteCollection("keywords");
 const keywordsSorted = computed(() =>
   [...keywords].sort((a, b) => a.label.localeCompare(b.label, "sv"))
 );
-const videos = remoteFilteredCollection("videos");
-const models = remoteFilteredCollection("models");
+
+// Photo collections
 const photos = remoteFilteredCollection("images", {
   type: "photograph",
-});
-const sketches = remoteFilteredCollection("images", {
-  type: "sketch",
-});
-const blueprints = remoteFilteredCollection("images", {
-  type: "blueprint",
-});
-const paintings = remoteFilteredCollection("images", {
-  type: "painting",
 });
 const historical_photograph = remoteFilteredCollection("images", {
   type: "historical_photograph",
 });
+const photosMix = computed(() => [...historical_photograph, ...photos]);
+
+// Painting collections
+const paintings = remoteFilteredCollection("images", {
+  type: ["sketch", "painting"],
+});
+const blueprints = remoteFilteredCollection("images", {
+  type: "blueprint",
+});
+const drawingsMix = computed(() => [...paintings, ...blueprints]);
+
+// Other collections
+const videos = remoteFilteredCollection("videos");
+const models = remoteFilteredCollection("models");
 const documents = remoteFilteredCollection("documents");
 
+/** Order items by "about date" or creation date. */
+function orderByDate(items) {
+  const dateStr = (item) =>
+    `${item.date.year || 3000} ${item.creation || "3000-01-01"}`;
+  return [...items].sort((a, b) => dateStr(a).localeCompare(dateStr(b)));
+}
+
+/** Which column is expanded to full width. */
 const expanded = ref("");
 </script>
 
@@ -135,7 +149,7 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="image in historical_photograph.slice(0, LIMIT)"
+          v-for="image in orderByDate(historical_photograph).slice(0, LIMIT)"
           class="archive-column-item"
         >
           <router-link :to="'/image/' + image.id">
@@ -154,18 +168,7 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="image in historical_photograph.slice(0, LIMIT / 2)"
-          class="archive-column-item"
-        >
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
-        <div
-          v-for="image in photos.slice(0, LIMIT / 2)"
+          v-for="image in orderByDate(photosMix).slice(0, LIMIT)"
           class="archive-column-item"
         >
           <router-link :to="'/image/' + image.id">
@@ -182,19 +185,7 @@ const expanded = ref("");
           <div class="archive-column-title">Avbildningar</div>
         </div>
         <div
-          v-for="image in paintings.slice(0, LIMIT / 2)"
-          class="archive-column-item"
-        >
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
-
-        <div
-          v-for="image in sketches.slice(0, LIMIT / 2)"
+          v-for="image in orderByDate(paintings).slice(0, LIMIT)"
           class="archive-column-item"
         >
           <router-link :to="'/image/' + image.id">
@@ -212,7 +203,7 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="image in blueprints.slice(0, LIMIT)"
+          v-for="image in orderByDate(blueprints).slice(0, LIMIT)"
           class="archive-column-item"
         >
           <router-link :to="'/image/' + image.id">
@@ -233,30 +224,7 @@ const expanded = ref("");
           <div class="archive-column-title">Uppritningar</div>
         </div>
         <div
-          v-for="image in paintings.slice(0, LIMIT / 3)"
-          class="archive-column-item"
-        >
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
-
-        <div
-          v-for="image in sketches.slice(0, LIMIT / 3)"
-          class="archive-column-item"
-        >
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
-        <div
-          v-for="image in blueprints.slice(0, LIMIT / 3)"
+          v-for="image in orderByDate(drawingsMix).slice(0, LIMIT)"
           class="archive-column-item"
         >
           <router-link :to="'/image/' + image.id">
@@ -273,7 +241,7 @@ const expanded = ref("");
           <div class="archive-column-title">Filmer</div>
         </div>
         <div
-          v-for="video in videos.slice(0, LIMIT / 2)"
+          v-for="video in orderByDate(videos).slice(0, LIMIT / 2)"
           class="archive-column-item"
         ></div>
 
@@ -282,7 +250,7 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="model in models.slice(0, LIMIT / 2)"
+          v-for="model in orderByDate(models).slice(0, LIMIT / 2)"
           class="archive-column-item"
         ></div>
       </div>
@@ -301,7 +269,7 @@ const expanded = ref("");
             style="flex-grow: 1; flex-basis: 0"
           >
             <a
-              v-for="document in documents"
+              v-for="document in orderByDate(documents)"
               :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
             >
               <div class="archive-column-document-item">

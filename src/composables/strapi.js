@@ -4,8 +4,15 @@ import useStore from "@/store";
 const API_BASE = "https://sodrarada.dh.gu.se/api/";
 
 export async function find(route, params = {}) {
-  params = new URLSearchParams(params);
-  const response = await fetch(`${API_BASE}${route}?${params}`);
+  const urlParams = new URLSearchParams();
+  // {a: [b, c]} => a_in=b&a_in=c
+  Object.keys(params).forEach((key) =>
+    Array.isArray(params[key])
+      ? params[key].forEach((value) => urlParams.append(`${key}_in`, value))
+      : urlParams.set(key, params[key])
+  );
+  console.log(params, urlParams.toString());
+  const response = await fetch(`${API_BASE}${route}?${urlParams}`);
   return await response.json();
 }
 
