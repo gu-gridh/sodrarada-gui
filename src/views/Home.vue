@@ -70,7 +70,7 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/109">
               <img
                 src="@/assets/graphics/1300navepanorama.jpg"
                 alt="Panorama: Navet"
@@ -81,7 +81,7 @@
           </div>
 
           <div class="timeline-infographics">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/108">
               <img
                 src="@/assets/graphics/1300chancelpanorama.jpg"
                 alt="Panorama: Koret"
@@ -148,7 +148,7 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/111">
               <img
                 src="@/assets/graphics/1700navepanorama.jpg"
                 alt="Panorama: Navet"
@@ -159,7 +159,7 @@
           </div>
 
           <div class="timeline-infographics" style="">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/110">
               <img
                 src="@/assets/graphics/1700chancelpanorama.jpg"
                 alt="Panorama: Koret"
@@ -364,7 +364,7 @@
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/109">
               <img
                 src="@/assets/graphics/1300navepanorama.jpg"
                 alt=""
@@ -375,7 +375,7 @@
           </div>
 
           <div class="timeline-infographics" style="">
-            <router-link to="/panorama/107">
+            <router-link to="/panorama/108">
               <img
                 src="@/assets/graphics/1300chancelpanorama.jpg"
                 alt=""

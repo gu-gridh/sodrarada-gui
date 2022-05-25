@@ -18,9 +18,7 @@ const personName = (person) =>
 
 <template>
   <div v-if="image.id">
-    <div id="item-top-image" style="display: none"></div>
-    <div id="item-top-video" style="display: none"></div>
-
+    <div id="item-top-image" style="text-align:center">
     <div v-if="props.imageType == 'panorama'" id="item-top-pano">
       <Panorama :src="'https://sodrarada.dh.gu.se/api' + image.image.url" />
     </div>
@@ -28,8 +26,12 @@ const personName = (person) =>
       v-else
       :src="'https://sodrarada.dh.gu.se/api' + image.image.url"
       :alt="image.image.alt"
-      style="width: 100%"
+      style="height:100%; margin-left:auto; margin-right:auto;"
     />
+    </div>
+    <div id="item-top-video" style="display: none"></div>
+
+    
 
     <div id="metadata">
       <div id="item-back" @click="go(-1)"></div>
