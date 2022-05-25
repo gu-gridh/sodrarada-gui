@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
@@ -29,6 +29,8 @@ const historical_photograph = remoteFilteredCollection("images", {
   type: "historical_photograph",
 });
 const documents = remoteFilteredCollection("documents");
+
+const expanded = ref("");
 </script>
 
 <template>
@@ -89,6 +91,7 @@ const documents = remoteFilteredCollection("documents");
     </div>
 
     <div
+      v-show="!expanded"
       id="archive-container"
       style="
         padding: 30px 50px 0 0;
@@ -105,7 +108,9 @@ const documents = remoteFilteredCollection("documents");
       >
         <div class="archive-column-top">
           <div class="archive-column-title">Rekonstruktion</div>
-          <div class="all-button">Se alla</div>
+          <div class="all-button" @click="expanded = 'reconstruction'">
+            Se alla
+          </div>
         </div>
 
         <div v-for="image in photos" class="archive-column-item">
@@ -121,7 +126,7 @@ const documents = remoteFilteredCollection("documents");
       <div class="archive-column" style="min-width: 160px" id="photohistcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Historisk</div>
-          <div class="all-button">Se alla</div>
+          <div class="all-button" @click="expanded = 'historical'">Se alla</div>
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
@@ -137,7 +142,7 @@ const documents = remoteFilteredCollection("documents");
       <div class="archive-column" style="min-width: 160px" id="photomixcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Fotografier</div>
-          <div class="all-button">Se alla</div>
+          <div class="all-button" @click="expanded = 'photos'">Se alla</div>
         </div>
 
         <div v-for="image in historical_photograph" class="archive-column-item">
@@ -294,6 +299,64 @@ const documents = remoteFilteredCollection("documents");
               </div>
             </div>
           </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div v-show="expanded" id="expanded" style="clear: both">
+      <div v-if="expanded === 'reconstruction'">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Rekonstruktion</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+        <div v-for="image in photos" class="archive-column-item">
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
+        </div>
+      </div>
+
+      <div v-if="expanded === 'historical'">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Historisk</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+        <div v-for="image in historical_photograph" class="archive-column-item">
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
+        </div>
+      </div>
+
+      <div v-if="expanded === 'photos'">
+        <div class="archive-column-top">
+          <div class="archive-column-title">Fotografier</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+        <div v-for="image in historical_photograph" class="archive-column-item">
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
+        </div>
+        <div v-for="image in photos" class="archive-column-item">
+          <router-link :to="'/image/' + image.id">
+            <img
+              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+              :alt="image.description"
+            />
+          </router-link>
         </div>
       </div>
     </div>
