@@ -243,7 +243,15 @@ const expanded = ref("");
         <div
           v-for="video in orderByDate(videos).slice(0, LIMIT / 2)"
           class="archive-column-item"
-        ></div>
+        >
+          <router-link :to="'/video/' + video.id">
+            <img
+              v-if="video.image"
+              :src="'https://sodrarada.dh.gu.se/api' + video.image.url"
+              alt="video.title"
+            />
+          </router-link>
+        </div>
 
         <div class="archive-column-top" style="margin-top: 30px">
           <div class="archive-column-title">Digitala modeller</div>
@@ -252,7 +260,15 @@ const expanded = ref("");
         <div
           v-for="model in orderByDate(models).slice(0, LIMIT / 2)"
           class="archive-column-item"
-        ></div>
+        >
+          <router-link :to="'/model/' + model.id">
+            <img
+              v-if="model.image"
+              :src="'https://sodrarada.dh.gu.se/api' + model.image.url"
+              alt="video.title"
+            />
+          </router-link>
+        </div>
       </div>
 
       <div class="archive-column-documents" id="documentcolumn">
