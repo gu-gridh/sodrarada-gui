@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
@@ -7,6 +8,9 @@ const { remoteCollection, remoteFilteredCollection } = useStrapi();
 const store = useStore();
 
 const keywords = remoteCollection("keywords");
+const keywordsSorted = computed(() =>
+  [...keywords].sort((a, b) => a.label.localeCompare(b.label, "sv"))
+);
 const videos = remoteFilteredCollection("videos");
 const models = remoteFilteredCollection("models");
 const photos = remoteFilteredCollection("images", {
@@ -74,7 +78,7 @@ const documents = remoteFilteredCollection("documents");
           Hela arkivet
         </div>
         <div
-          v-for="keyword in keywords"
+          v-for="keyword in keywordsSorted"
           class="filtertag"
           :class="{ activeTag: store.keywordFilter == keyword.id }"
           @click="store.filterByKeywordId(keyword.id)"
