@@ -332,14 +332,22 @@ const expanded = ref("");
           <div class="all-button" @click="expanded = ''">Fäll ihop</div>
         </div>
 
-        <div v-for="image in photos" class="archive-column-item">
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
+        <masonry-wall
+          :items="orderByDate(photos)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
       </div>
 
       <div v-if="expanded === 'historical'">
@@ -348,14 +356,22 @@ const expanded = ref("");
           <div class="all-button" @click="expanded = ''">Fäll ihop</div>
         </div>
 
-        <div v-for="image in historical_photograph" class="archive-column-item">
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
+        <masonry-wall
+          :items="orderByDate(historical_photograph)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
       </div>
 
       <div v-if="expanded === 'photos'">
@@ -364,22 +380,22 @@ const expanded = ref("");
           <div class="all-button" @click="expanded = ''">Fäll ihop</div>
         </div>
 
-        <div v-for="image in historical_photograph" class="archive-column-item">
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
-        <div v-for="image in photos" class="archive-column-item">
-          <router-link :to="'/image/' + image.id">
-            <img
-              :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
-              :alt="image.description"
-            />
-          </router-link>
-        </div>
+        <masonry-wall
+          :items="orderByDate(photosMix)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
       </div>
     </div>
   </div>

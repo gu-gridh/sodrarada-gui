@@ -194,6 +194,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yeger/vue-masonry-wall@npm:^3.0.32":
+  version: 3.0.32
+  resolution: "@yeger/vue-masonry-wall@npm:3.0.32"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: b285598a167b81442b75aa09bd5e229ba517dbff44f4dcbda0dc856ac2cf7fe51056629eb9f83e5dcf8e0761beabc1504a3a5eed38c6caa625fa933afcf18e24
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -1308,6 +1317,7 @@ __metadata:
   resolution: "sodrarada-gui@workspace:."
   dependencies:
     "@vitejs/plugin-vue": ^2.3.3
+    "@yeger/vue-masonry-wall": ^3.0.32
     pannellum: ^2.5.6
     pinia: ^2.0.14
     vite: ^2.9.9
