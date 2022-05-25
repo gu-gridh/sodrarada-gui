@@ -4,6 +4,8 @@ import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
 
+const LIMIT = 20;
+
 const { remoteCollection, remoteFilteredCollection } = useStrapi();
 const store = useStore();
 
@@ -113,7 +115,10 @@ const expanded = ref("");
           </div>
         </div>
 
-        <div v-for="image in photos" class="archive-column-item">
+        <div
+          v-for="image in photos.slice(0, LIMIT)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -129,7 +134,10 @@ const expanded = ref("");
           <div class="all-button" @click="expanded = 'historical'">Se alla</div>
         </div>
 
-        <div v-for="image in historical_photograph" class="archive-column-item">
+        <div
+          v-for="image in historical_photograph.slice(0, LIMIT)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -145,7 +153,10 @@ const expanded = ref("");
           <div class="all-button" @click="expanded = 'photos'">Se alla</div>
         </div>
 
-        <div v-for="image in historical_photograph" class="archive-column-item">
+        <div
+          v-for="image in historical_photograph.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -153,7 +164,10 @@ const expanded = ref("");
             />
           </router-link>
         </div>
-        <div v-for="image in photos" class="archive-column-item">
+        <div
+          v-for="image in photos.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -167,7 +181,10 @@ const expanded = ref("");
         <div class="archive-column-top">
           <div class="archive-column-title">Avbildningar</div>
         </div>
-        <div v-for="image in paintings" class="archive-column-item">
+        <div
+          v-for="image in paintings.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -176,7 +193,10 @@ const expanded = ref("");
           </router-link>
         </div>
 
-        <div v-for="image in sketches" class="archive-column-item">
+        <div
+          v-for="image in sketches.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -191,7 +211,10 @@ const expanded = ref("");
           <div class="archive-column-title">Uppritningar</div>
         </div>
 
-        <div v-for="image in blueprints" class="archive-column-item">
+        <div
+          v-for="image in blueprints.slice(0, LIMIT)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -209,7 +232,10 @@ const expanded = ref("");
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
         </div>
-        <div v-for="image in paintings" class="archive-column-item">
+        <div
+          v-for="image in paintings.slice(0, LIMIT / 3)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -218,7 +244,10 @@ const expanded = ref("");
           </router-link>
         </div>
 
-        <div v-for="image in sketches" class="archive-column-item">
+        <div
+          v-for="image in sketches.slice(0, LIMIT / 3)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -226,7 +255,10 @@ const expanded = ref("");
             />
           </router-link>
         </div>
-        <div v-for="image in blueprints" class="archive-column-item">
+        <div
+          v-for="image in blueprints.slice(0, LIMIT / 3)"
+          class="archive-column-item"
+        >
           <router-link :to="'/image/' + image.id">
             <img
               :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
@@ -240,13 +272,19 @@ const expanded = ref("");
         <div class="archive-column-top">
           <div class="archive-column-title">Filmer</div>
         </div>
-        <div v-for="video in videos" class="archive-column-item"></div>
+        <div
+          v-for="video in videos.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        ></div>
 
         <div class="archive-column-top" style="margin-top: 30px">
           <div class="archive-column-title">Digitala modeller</div>
         </div>
 
-        <div v-for="model in models" class="archive-column-item"></div>
+        <div
+          v-for="model in models.slice(0, LIMIT / 2)"
+          class="archive-column-item"
+        ></div>
       </div>
 
       <div class="archive-column-documents" id="documentcolumn">
@@ -263,7 +301,7 @@ const expanded = ref("");
             style="flex-grow: 1; flex-basis: 0"
           >
             <a
-              v-for="document in documents.slice(0, documents.length / 2)"
+              v-for="document in documents"
               :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
             >
               <div class="archive-column-document-item">
