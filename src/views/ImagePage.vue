@@ -56,7 +56,7 @@ const personName = (person) =>
       </div>
 
 
-      <div id="filter-container" style="width:100%; float:left;">
+      <div id="filter-container" style="width:100%; float:left; margin-bottom:30px;">
         <div
           v-for="keyword in image.keywords"
           :key="keyword.id"
