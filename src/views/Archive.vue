@@ -1,7 +1,67 @@
+<script setup>
+import { ref, computed } from "vue";
+import useStore from "@/store";
+import useStrapi from "@/composables/strapi";
+import "@/assets/archive.css";
+
+const LIMIT = 10;
+
+const { remoteCollection, remoteFilteredCollection } = useStrapi();
+const store = useStore();
+
+// Keywords
+const keywords = remoteCollection("keywords");
+const keywordsSorted = computed(() =>
+  [...keywords].sort((a, b) => a.label.localeCompare(b.label, "sv"))
+);
+
+// Photo collections
+const photos = remoteFilteredCollection("images", {
+  type: "photograph",
+});
+const historical_photograph = remoteFilteredCollection("images", {
+  type: "historical_photograph",
+});
+const photosMix = computed(() => [...historical_photograph, ...photos]);
+
+// Painting collections
+const paintings = remoteFilteredCollection("images", {
+  type: ["sketch", "painting"],
+});
+const blueprints = remoteFilteredCollection("images", {
+  type: "blueprint",
+});
+const drawingsMix = computed(() => [...paintings, ...blueprints]);
+
+// Other collections
+const videos = remoteFilteredCollection("videos");
+const models = remoteFilteredCollection("models");
+const documents = remoteFilteredCollection("documents");
+
+/** Order items by "about date" or creation date. */
+function orderByDate(items) {
+  const dateStr = (item) =>
+    `${item.date.year || 3000} ${item.creation || "3000-01-01"}`;
+  return [...items].sort((a, b) => dateStr(a).localeCompare(dateStr(b)));
+}
+
+/** Which column is expanded to full width. */
+const expanded = ref("");
+</script>
+
 <template>
   <div id="top-container" style="margin-left: 100px; overflow: hidden">
-    <div class="archive-model">
-      <ThreeDViewer />
+    <div id="archive-model">
+
+        <ThreeDViewer />
+     
+      <div id="archive-model-loader">
+        <div id="archive-model-loader-label">
+          Klicka h&auml;r<br />
+          f&ouml;r att ladda in <br />
+          modellen<br />
+        </div>
+      </div>
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
   </div>
@@ -347,62 +407,6 @@
 
   <div id="foot" style="float: left; width: 100%"></div>
 </template>
-
-<script setup>
-import { ref, computed } from "vue";
-import useStore from "@/store";
-import useStrapi from "@/composables/strapi";
-import "@/assets/archive.css";
-
-const ThreeDViewer = () =>
-  import(/* webpackChunkName: "3d" */ "@/components/ThreeDViewer.vue");
-
-const LIMIT = 15;
-
-const { remoteCollection, remoteFilteredCollection } = useStrapi();
-const store = useStore();
-
-// Keywords
-const keywords = remoteCollection("keywords");
-const keywordsSorted = computed(() =>
-  [...keywords].sort((a, b) => a.label.localeCompare(b.label, "sv"))
-);
-
-// Photo collections
-const photos = remoteFilteredCollection("images", {
-  type: "photograph",
-});
-const historical_photograph = remoteFilteredCollection("images", {
-  type: "historical_photograph",
-});
-const photosMix = computed(() => [...historical_photograph, ...photos]);
-
-// Painting collections
-const paintings = remoteFilteredCollection("images", {
-  type: ["sketch", "painting"],
-});
-const blueprints = remoteFilteredCollection("images", {
-  type: "blueprint",
-});
-const drawingsMix = computed(() => [...paintings, ...blueprints]);
-
-// Other collections
-const videos = remoteFilteredCollection("videos");
-const models = remoteFilteredCollection("models");
-const documents = remoteFilteredCollection("documents");
-
-/** Order items by "about date" or creation date. */
-function orderByDate(items) {
-  const dateStr = (item) =>
-    `${item.date.year || 3000} ${item.creation || "3000-01-01"}`;
-  return [...items].sort((a, b) => dateStr(a).localeCompare(dateStr(b)));
-}
-
-/** Which column is expanded to full width. */
-const expanded = ref("");
-</script>
-
-
 
 <style scoped>
 .archive-column-item {

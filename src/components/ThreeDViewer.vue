@@ -2,8 +2,8 @@
   <model-viewer
     class="model-viewer"
     reveal="interaction"
-    loading="lazy"
-    src="/assets/sr1300raw.glb"
+    loading="auto"
+    src="@/assets/sr1300raw.glb"
     alt="3d-modell av Södra Råda"
     camera-controls
     disable-zoom
@@ -25,13 +25,9 @@
   </model-viewer>
 </template>
 
-<script>
+<script setup>
 import "@google/model-viewer";
 import "focus-visible";
-
-export default {
-  name: "ThreeDViewer",
-};
 </script>
 
 <style scoped>
@@ -40,7 +36,7 @@ export default {
   width: 100%;
   background-color:green;
   --progress-bar-color: rgba(0, 0, 0, 0);
-  --progress-bar-height: 0px;
+  --progress-bar-height: 30px;
   --progress-mask: fff;
   --poster-color: transparent;
   --progress-mask: transparent;

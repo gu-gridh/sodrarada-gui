@@ -38,6 +38,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@google/model-viewer@npm:^1.3.0":
+  version: 1.12.0
+  resolution: "@google/model-viewer@npm:1.12.0"
+  dependencies:
+    lit: ^2.2.3
+    three: ^0.139.2
+  checksum: 0a184db7bd20ba6f6f9bef3c64bcb2113706890cfdb01ea3b7ae236ec73d1cffa2b973052c59caefd2c26907533d840e8f20f02852c77a212e9f67d046d49c31
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^1.3.0":
+  version: 1.3.2
+  resolution: "@lit/reactive-element@npm:1.3.2"
+  checksum: 0a89906ddebe2fe2772d942769fc6d69c53e445d476f449690daf371e196b73b99422b7722d262b97d8233e91528ee66b821d013032f0f9fd0f3fd178b4f6a45
+  languageName: node
+  linkType: hard
+
 "@npmcli/fs@npm:^2.1.0":
   version: 2.1.0
   resolution: "@npmcli/fs@npm:2.1.0"
@@ -62,6 +79,13 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  languageName: node
+  linkType: hard
+
+"@types/trusted-types@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@types/trusted-types@npm:2.0.2"
+  checksum: 3371eef5f1c50e1c3c07a127c1207b262ba65b83dd167a1c460fc1b135a3fb0c97b9f508efebd383f239cc5dd5b7169093686a692a501fde9c3f7208657d9b0d
   languageName: node
   linkType: hard
 
@@ -634,6 +658,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"focus-visible@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "focus-visible@npm:5.2.0"
+  checksum: 876f646ef453680d3d34e9f9b23961527ffd5ccaed8690f423d4fbfa37ff023d98a490972bc1387850e37ec2e44958c81f6096ef95b67462e5c4b5404cf1dbb9
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -861,6 +892,36 @@ __metadata:
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
   checksum: 26bf6c5480dda5161c820c5b5c751ae1e766c587b1f951ea3fcfc973bafb7831ae5b54a31a69bd670220e42e99ec154475025a468eae58ea262f813fdc8d1c62
+  languageName: node
+  linkType: hard
+
+"lit-element@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "lit-element@npm:3.2.0"
+  dependencies:
+    "@lit/reactive-element": ^1.3.0
+    lit-html: ^2.2.0
+  checksum: 64bd0f05f7a93921a5853e92f4b86b75affc088805f5ce0249c62a02a1d44445dea5c8319badc4cae6e5663afeb60296e3e0f63fd3af265b89fa482c8a846c3d
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^2.2.0":
+  version: 2.2.4
+  resolution: "lit-html@npm:2.2.4"
+  dependencies:
+    "@types/trusted-types": ^2.0.2
+  checksum: 1337a25c09b5d31eb7e0de672b1b63f19586cf37d063620e3f8807522a710db727b6fcc0007a18cd8049f06f8e369dd65611e484ecc6bfcfc7833d7c0fb229f6
+  languageName: node
+  linkType: hard
+
+"lit@npm:^2.2.3":
+  version: 2.2.4
+  resolution: "lit@npm:2.2.4"
+  dependencies:
+    "@lit/reactive-element": ^1.3.0
+    lit-element: ^3.2.0
+    lit-html: ^2.2.0
+  checksum: da491106bb155fee6bedf3545aa19e224299b7d6019e462da2b16bc9ac5b008de63338f4dbcf82c53c79ce74fd115c10b8ab870486b2fc127e6c21418234aafb
   languageName: node
   linkType: hard
 
@@ -1316,8 +1377,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sodrarada-gui@workspace:."
   dependencies:
+    "@google/model-viewer": ^1.3.0
     "@vitejs/plugin-vue": ^2.3.3
     "@yeger/vue-masonry-wall": ^3.0.32
+    focus-visible: ^5.2.0
     pannellum: ^2.5.6
     pinia: ^2.0.14
     vite: ^2.9.9
@@ -1403,6 +1466,13 @@ __metadata:
     mkdirp: ^1.0.3
     yallist: ^4.0.0
   checksum: a04c07bb9e2d8f46776517d4618f2406fb977a74d914ad98b264fc3db0fe8224da5bec11e5f8902c5b9bcb8ace22d95fbe3c7b36b8593b7dfc8391a25898f32f
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.139.2":
+  version: 0.139.2
+  resolution: "three@npm:0.139.2"
+  checksum: 9e016065b31a2a69bba730a32bd5b61354365bf0f5072121b8695aac38c9585e4e46361275967fbb58d21e001e5189128107c3ecbf24338ca951d11b524df992
   languageName: node
   linkType: hard
 

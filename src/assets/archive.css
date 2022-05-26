@@ -294,21 +294,22 @@
            }
 
            #archive-model {
-               position: absolute;
-               margin-top: 00px;
-               margin-left: 30%;
-               margin-right: auto;
-               width: 800px;
-               height: 800px;
-               background-size: 800px, 800px;
-               animation-name: PosterFade;
-               animation-duration: 4s;
-               animation-delay: 0s;
-               animation-timing-function: ease;
-               animation-fill-mode: forwards;
-               opacity: 0.0;
-               transition: all .2s ease-in-out;
-                z-index: -1;
+            position: absolute;
+            margin-top: 00px;
+            margin-left: 30%;
+            margin-right: auto;
+            width: 800px;
+            height: 800px;
+            background-image: url(@/assets/graphics/3dplaceholder.png);
+            background-size: 800px, 800px;
+            animation-name: PosterFade;
+            animation-duration: 4s;
+            animation-delay: 0s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            opacity: 0.0;
+            transition: all .2s ease-in-out;
+             z-index: -1;
            }
 
           
