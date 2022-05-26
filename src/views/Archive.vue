@@ -249,7 +249,7 @@ const expanded = ref("");
         </div>
         <div
           v-for="video in orderByDate(videos).slice(0, LIMIT * 2)"
-          class="archive-column-item"
+          class="archive-column-item-videomodel"
         >
           <router-link :to="'/video/' + video.id">
             <img
@@ -269,7 +269,7 @@ const expanded = ref("");
 
         <div
           v-for="model in orderByDate(models).slice(0, LIMIT * 2)"
-          class="archive-column-item"
+          class="archive-column-item-videomodel"
         >
           <router-link :to="'/model/' + model.id">
             <img
@@ -593,6 +593,15 @@ const expanded = ref("");
   height: auto;
 }
 .archive-column-item img {
+  display: block;
+  width: 100%;
+}
+
+.archive-column-item-videomodel {
+  min-height: 10px;
+  height: auto;
+}
+.archive-column-item-videomodel img {
   display: block;
   width: 100%;
 }
