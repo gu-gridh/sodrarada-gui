@@ -566,7 +566,7 @@ const expanded = ref("");
               <div class="archive-column-document-expanded-item">
                 <div class="archive-column-document-icon"></div>
                 <div class="archive-column-document-info">
-                  <div class="archive-column-document-title">
+                  <div class="archive-column-document-title" style="">
                     {{ document.title }}
                   </div>
                   <div class="archive-column-item-label-small" style="margin-top:5px;">PDF - 1.2mb</div> 
