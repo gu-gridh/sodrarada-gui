@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
+import "@/components/ThreeDViewer.vue";
 
 const LIMIT = 15;
 
@@ -109,7 +110,7 @@ const expanded = ref("");
       </div>
     </div>
 
-<div style="min-height:600px;">
+<div style="min-height:800px;">
     <div
       v-show="!expanded"
       id="archive-container"
@@ -244,7 +245,7 @@ const expanded = ref("");
 
 
 
-      <div class="archive-column"  id="dividercolumn" style="min-width:20px; max-width:20px"></div>
+      <div class="archive-column"  id="dividercolumn" style=" min-width:20px; max-width:20px;"></div>
 
 
 
@@ -269,7 +270,7 @@ const expanded = ref("");
         </div>
               
 
-        <div class="archive-column-top" style="margin-top: 30px">
+        <div class="archive-column-top" style="margin-top:30px">
           <div class="archive-column-title">Modeller</div>
         </div>
 
@@ -341,7 +342,7 @@ const expanded = ref("");
  <!--  Below are the expanded galleries -->
 
     
-    <div v-show="expanded" id="expanded" style="clear: both; padding:30px 80px 0 0;">
+    <div v-show="expanded" id="expanded" style="clear: both; padding:30px 80px 0 0; ">
      
       <div v-if="expanded === 'reconstruction'">
         <div class="archive-column-top" >

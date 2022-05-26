@@ -26,7 +26,7 @@ const personName = (person) =>
       v-else
       :src="'https://sodrarada.dh.gu.se/api' + image.image.url"
       :alt="image.image.alt"
-      style="height:100%; margin-left:auto; margin-right:auto;"
+      style="height:100%;"
     />
     </div>
     <div id="item-top-video" style="display: none"></div>
