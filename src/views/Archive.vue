@@ -109,6 +109,7 @@ const expanded = ref("");
       </div>
     </div>
 
+<div style="min-height:600px;">
     <div
       v-show="!expanded"
       id="archive-container"
@@ -126,7 +127,7 @@ const expanded = ref("");
         id="photomoderncolumn"
       >
         <div class="archive-column-top">
-          <div class="archive-column-title">Rekonstruktion</div>
+          <div class="archive-column-title">Fotografier</div>
           <div class="all-button" @click="expanded = 'reconstruction'">
             Se alla
           </div>
@@ -147,7 +148,8 @@ const expanded = ref("");
 
       <div class="archive-column" style="min-width: 160px" id="photohistcolumn">
         <div class="archive-column-top">
-          <div class="archive-column-title">Historisk</div>
+          <div class="archive-column-title">Äldre fotografier</div>
+    
           <div class="all-button" @click="expanded = 'historical'">Se alla</div>
         </div>
 
@@ -204,7 +206,7 @@ const expanded = ref("");
       <div class="archive-column" id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
-            <div class="all-button" @click="expanded = 'photos'">Se alla</div>
+            <div class="all-button" @click="expanded = 'blueprints'">Se alla</div>
         </div>
 
         <div
@@ -227,6 +229,7 @@ const expanded = ref("");
       >
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
+           <div class="all-button" @click="expanded = 'blueprint-drawing'">Se alla</div>
         </div>
         <div
           v-for="image in orderByDate(drawingsMix).slice(0, LIMIT)"
@@ -244,9 +247,10 @@ const expanded = ref("");
       <div class="archive-column" id="filmcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Filmer</div>
+          <div class="all-button" @click="expanded = 'videomodels'">Se alla</div>
         </div>
         <div
-          v-for="video in orderByDate(videos).slice(0, LIMIT * 100)"
+          v-for="video in orderByDate(videos).slice(0, LIMIT * 2)"
           class="archive-column-item"
         >
           <router-link :to="'/video/' + video.id">
@@ -256,6 +260,7 @@ const expanded = ref("");
               alt="video.title"
             />
           </router-link>
+           <div class="archive-column-item-label">{{ video.title }} </div>
         </div>
 
         <div class="archive-column-top" style="margin-top: 30px">
@@ -263,23 +268,26 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="model in orderByDate(models).slice(0, LIMIT * 100)"
+          v-for="model in orderByDate(models).slice(0, LIMIT * 2)"
           class="archive-column-item"
         >
           <router-link :to="'/model/' + model.id">
             <img
               v-if="model.image"
               :src="'https://sodrarada.dh.gu.se/api' + model.image.url"
-              alt="video.title"
+              alt="model.title"
             />
+             
           </router-link>
+             <div class="archive-column-item-label">{{ model.title }}</div> 
         </div>
+     
       </div>
 
       <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Projektdokument</div>
-            <div class="all-button" @click="expanded = 'photos'">Se alla</div>
+            <div class="all-button" @click="expanded = 'documents'">Se alla</div>
         </div>
 
         <div
@@ -307,37 +315,29 @@ const expanded = ref("");
               </div>
             </a>
           </div>
-
-          <!-- <div
-            class="archive-column-documents-subcolumn"
-            style="flex-grow: 1; flex-basis: 0"
-          >
-            <div
-              v-for="document in documents.slice(documents.length / 2)"
-              class="archive-column-document-item"
-            >
-              <div class="archive-column-document-icon"></div>
-              <div class="archive-column-document-info">
-                <div class="archive-column-document-title">
-                  {{ document.title }}
-                </div>
-                <div class="archive-column-document-author">
-                  F&ouml;rfattarnamn
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
 
-<div style="padding:30px 50px 0 0; float:left; min-height:400px;">
+
+
+
+
+
+
+
+
+
+
+
+ <!--  Below are the expanded galleries -->
+
     
-    <div v-show="expanded" id="expanded" style="clear: both">
+    <div v-show="expanded" id="expanded" style="clear: both; padding:30px 0 0 0;">
      
       <div v-if="expanded === 'reconstruction'">
         <div class="archive-column-top" >
-          <div class="archive-column-title">Rekonstruktion</div>
+          <div class="archive-column-title">Fotografier</div>
           <div class="all-button" @click="expanded = ''">Fäll ihop</div>
         </div>
 
@@ -361,7 +361,7 @@ const expanded = ref("");
 
       <div v-if="expanded === 'historical'">
         <div class="archive-column-top">
-          <div class="archive-column-title">Historisk</div>
+          <div class="archive-column-title">Äldre fotografier</div>
           <div class="all-button" @click="expanded = ''">Fäll ihop</div>
         </div>
 
@@ -431,9 +431,155 @@ const expanded = ref("");
         </masonry-wall>
       </div>
 
+       <div v-if="expanded === 'blueprints'">
+        <div class="archive-column-top" >
+          <div class="archive-column-title">Avbildningar</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+        <masonry-wall
+          :items="orderByDate(blueprints)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
+      </div>
+
+
+      <div v-if="expanded === 'blueprint-drawing'">
+        <div class="archive-column-top" >
+          <div class="archive-column-title">Avbildningar</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+  
+        <masonry-wall
+          :items="orderByDate(paintings)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
+
+
+        <masonry-wall
+          :items="orderByDate(blueprints)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
+      </div>
+
+
+      <div v-if="expanded === 'videomodels'">
+        <div class="archive-column-top" >
+          <div class="archive-column-title">Filmer och modeller</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+  
+        <masonry-wall
+          :items="orderByDate(video)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+               <router-link :to="'/video/' + video.id">
+            <img
+              v-if="video.image"
+              :src="'https://sodrarada.dh.gu.se/api' + video.image.url"
+              alt="video.title"
+            />
+          </router-link>
+               <div class="archive-column-item-label">{{ video.title }}</div> 
+            </div>
+          </template>
+        </masonry-wall>
+
+
+        <masonry-wall
+          :items="orderByDate(model)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/model/' + model.id">
+            <img
+              v-if="model.image"
+              :src="'https://sodrarada.dh.gu.se/api' + model.image.url"
+              alt="model.title"
+            />
+          </router-link>
+               <div class="archive-column-item-label">{{ model.title }}</div> 
+            </div>
+          </template>
+        </masonry-wall>
+      </div>
+
+
+
+      <div v-if="expanded === 'documents'">
+        <div class="archive-column-top" >
+          <div class="archive-column-title">Dokument</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+     
+          <div class="archive-column-documents-expanded">
+            <a
+              v-for="document in orderByDate(documents)"
+              :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
+            >
+              <div class="archive-column-document-item">
+                <div class="archive-column-document-icon"></div>
+                <div class="archive-column-document-info">
+                  <div class="archive-column-document-title">
+                    {{ document.title }}
+                  </div>
+                   <div class="archive-column-document-author">
+
+                </div>
+                </div>
+              </div>
+            </a>
+          </div>      
+      </div>
+  
+
+
     </div>
   </div>
-    </div>
+  </div>
+  
 
   <div id="foot" style="float: left; width: 100%"></div>
 </template>

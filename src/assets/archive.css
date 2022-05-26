@@ -127,15 +127,16 @@
            .archive-column-top {
 
                margin-bottom: 20px;
-               height: 30px;
+               height: auto;
            }
 
            .archive-column-title {
-               float: left;
+        
                font-family: 'Barlow Condensed', sans-serif;
                font-weight: 300;
                text-align: left;
                font-size: 22px;
+               margin-bottom:10px;
            }
 
 
@@ -156,16 +157,16 @@
            }
 
            .all-button {
-            float: left;
-            margin-left: 10px;
-            margin-top: 4px;
+    display:inline;
+
+            margin-top: 0px;
          padding:3px 5px 3px 5px;
             border-radius: 5px;
             border-width: 1px;
             border-style: solid;
             text-align: center;
             line-height: 1.0;
-    color:black;
+            color:black;
             opacity: 0.8;
             cursor: pointer;
         }
@@ -192,6 +193,26 @@
 
            }
 
+           .archive-column-documents-expanded {
+          columns:3;
+
+        }
+
+        @media screen and (max-width: 1350px) {
+        .archive-column-documents-expanded {
+            columns:2;
+  
+          }
+        }
+
+        @media screen and (max-width: 950px) {
+
+          .archive-column-documents-expanded {
+            columns:1;
+  
+          }
+        }
+
            .archive-column-item {
                margin-bottom: 10px;
                height: 100px;
@@ -206,39 +227,17 @@
 
            }
 
-           #filmcolumn .archive-column-item {
-
-
-               background-color: #cccccc;
-
+           .archive-column-item-label{
+               float:left;
+               margin-top:5px;
+               font-size:18px;
+               height:25px;
+               margin-bottom:20px;
+               width:100%;
+               overflow:hidden;
            }
 
-           #blueprintcolumn .archive-column-item {
-
-               background-color: #999999;
-
-           }
-
-
-           #drawingcolumn .archive-column-item {
-               background-color: #666666;
-
-
-           }
-
-
-           #photocolumn .archive-column-item {
-
-
-               background-color: #444444;
-
-           }
-
-           #modelcolumn .archive-column-item {
-
-               background-color: black;
-
-           }
+       
 
            .archive-column-document-item {
                display: flex;
@@ -394,7 +393,7 @@
          display:block;
      }
 
-           @media screen and (max-width: 1300px) {
+           @media screen and (max-width: 1250px) {
            #blueprint-drawingcolumn{
                display:block;
            }
