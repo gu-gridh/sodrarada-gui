@@ -128,7 +128,7 @@ const expanded = ref("");
         <div class="archive-column-top">
           <div class="archive-column-title">Fotografier</div>
           <div class="all-button" @click="expanded = 'reconstruction'">
-            Se alla
+            Visa alla
           </div>
         </div>
 
@@ -149,7 +149,7 @@ const expanded = ref("");
         <div class="archive-column-top">
           <div class="archive-column-title">Äldre fotografier</div>
     
-          <div class="all-button" @click="expanded = 'historical'">Se alla</div>
+          <div class="all-button" @click="expanded = 'historical'">Visa alla</div>
         </div>
 
         <div
@@ -168,7 +168,7 @@ const expanded = ref("");
       <div class="archive-column" id="photomixcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Fotografier</div>
-          <div class="all-button" @click="expanded = 'photos'">Se alla</div>
+          <div class="all-button" @click="expanded = 'photos'">Visa alla</div>
         </div>
 
         <div
@@ -187,7 +187,7 @@ const expanded = ref("");
       <div class="archive-column" id="drawingcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Avbildningar</div>
-            <div class="all-button" @click="expanded = 'drawings'">Se alla</div>
+            <div class="all-button" @click="expanded = 'drawings'">Visa alla</div>
         </div>
         <div
           v-for="image in orderByDate(paintings).slice(0, LIMIT)"
@@ -205,7 +205,7 @@ const expanded = ref("");
       <div class="archive-column"   id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
-            <div class="all-button" @click="expanded = 'blueprints'">Se alla</div>
+            <div class="all-button" @click="expanded = 'blueprints'">Visa alla</div>
         </div>
 
         <div
@@ -227,7 +227,7 @@ const expanded = ref("");
       >
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
-           <div class="all-button" @click="expanded = 'blueprint-drawing'">Se alla</div>
+           <div class="all-button" @click="expanded = 'blueprint-drawing'">Visa alla</div>
         </div>
         <div
           v-for="image in orderByDate(drawingsMix).slice(0, LIMIT)"
@@ -242,10 +242,16 @@ const expanded = ref("");
         </div>
       </div>
 
+
+
+      <div class="archive-column"  id="dividercolumn" style="min-width:20px; max-width:20px"></div>
+
+
+
       <div class="archive-column"  id="filmcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Filmer</div>
-          <div class="all-button" @click="expanded = 'videomodels'">Se alla</div>
+          <div class="all-button" @click="expanded = 'videomodels'">Visa alla</div>
         </div>
         <div
           v-for="video in orderByDate(videos).slice(0, LIMIT * 2)"
@@ -259,7 +265,7 @@ const expanded = ref("");
             />
           </router-link>
      <div class="archive-column-item-label">{{ video.title }} </div>
-      <div class="archive-column-item-label-small">Dokumentär</div> 
+                 <div class="archive-column-item-label-small">7 minuter</div> 
         </div>
               
 
@@ -288,7 +294,7 @@ const expanded = ref("");
       <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Projektdokument</div>
-            <div class="all-button" @click="expanded = 'documents'">Se alla</div>
+            <div class="all-button" @click="expanded = 'documents'">Visa alla</div>
         </div>
 
         <div
@@ -522,7 +528,7 @@ const expanded = ref("");
             />
           </router-link>
                <div class="archive-column-item-label">{{ video.title }}</div> 
-              <div class="archive-column-item-label-small">Dokumentär</div> 
+              <div class="archive-column-item-label-small">7.37 minuter</div> 
             </div>
           </template>
         </masonry-wall>
