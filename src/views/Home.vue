@@ -388,7 +388,7 @@
       </div>
     </div>
 
-    <div class="archive-link" style="margin-top: 100px; margin-bottom: 100px">
+    <div class="archive-link" style="margin-top: 50px; margin-bottom: 100px">
       <router-link to="/archive">Arkivet</router-link>
     </div>
   </div>

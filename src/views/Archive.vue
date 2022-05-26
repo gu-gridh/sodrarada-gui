@@ -123,7 +123,6 @@ const expanded = ref("");
     >
       <div
         class="archive-column"
-        style="min-width: 170px"
         id="photomoderncolumn"
       >
         <div class="archive-column-top">
@@ -146,7 +145,7 @@ const expanded = ref("");
         </div>
       </div>
 
-      <div class="archive-column" style="min-width: 160px" id="photohistcolumn">
+      <div class="archive-column" id="photohistcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Äldre fotografier</div>
     
@@ -166,7 +165,7 @@ const expanded = ref("");
         </div>
       </div>
 
-      <div class="archive-column" style="min-width: 160px" id="photomixcolumn">
+      <div class="archive-column" id="photomixcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Fotografier</div>
           <div class="all-button" @click="expanded = 'photos'">Se alla</div>
@@ -203,7 +202,7 @@ const expanded = ref("");
         </div>
       </div>
 
-      <div class="archive-column" id="blueprintcolumn">
+      <div class="archive-column"   id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
             <div class="all-button" @click="expanded = 'blueprints'">Se alla</div>
@@ -224,7 +223,6 @@ const expanded = ref("");
 
       <div
         class="archive-column"
-        style="min-width: 180px"
         id="blueprint-drawingcolumn"
       >
         <div class="archive-column-top">
@@ -244,7 +242,7 @@ const expanded = ref("");
         </div>
       </div>
 
-      <div class="archive-column" id="filmcolumn">
+      <div class="archive-column"  id="filmcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Filmer</div>
           <div class="all-button" @click="expanded = 'videomodels'">Se alla</div>
@@ -260,11 +258,13 @@ const expanded = ref("");
               alt="video.title"
             />
           </router-link>
-           <div class="archive-column-item-label">{{ video.title }} </div>
+     <div class="archive-column-item-label">{{ video.title }} </div>
+      <div class="archive-column-item-label-small">Dokumentär</div> 
         </div>
+              
 
         <div class="archive-column-top" style="margin-top: 30px">
-          <div class="archive-column-title">Digitala modeller</div>
+          <div class="archive-column-title">Modeller</div>
         </div>
 
         <div
@@ -280,6 +280,7 @@ const expanded = ref("");
              
           </router-link>
              <div class="archive-column-item-label">{{ model.title }}</div> 
+              <div class="archive-column-item-label-small">Texturerad trådmodell</div> 
         </div>
      
       </div>
@@ -307,7 +308,8 @@ const expanded = ref("");
                 <div class="archive-column-document-info">
                   <div class="archive-column-document-title">
                     {{ document.title }}
-                  </div>
+                  </div>         
+                  <div class="archive-column-item-label-small" style="margin-top:5px;">PDF - 1.2mb</div> 
                   <!-- <div class="archive-column-document-author">
                     F&ouml;rfattarnamn
                   </div> -->
@@ -333,7 +335,7 @@ const expanded = ref("");
  <!--  Below are the expanded galleries -->
 
     
-    <div v-show="expanded" id="expanded" style="clear: both; padding:30px 0 0 0;">
+    <div v-show="expanded" id="expanded" style="clear: both; padding:30px 80px 0 0;">
      
       <div v-if="expanded === 'reconstruction'">
         <div class="archive-column-top" >
@@ -520,6 +522,7 @@ const expanded = ref("");
             />
           </router-link>
                <div class="archive-column-item-label">{{ video.title }}</div> 
+              <div class="archive-column-item-label-small">Dokumentär</div> 
             </div>
           </template>
         </masonry-wall>
@@ -540,6 +543,7 @@ const expanded = ref("");
             />
           </router-link>
                <div class="archive-column-item-label">{{ model.title }}</div> 
+                <div class="archive-column-item-label-small">Texturerad trådmodell</div> 
             </div>
           </template>
         </masonry-wall>
@@ -559,15 +563,14 @@ const expanded = ref("");
               v-for="document in orderByDate(documents)"
               :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
             >
-              <div class="archive-column-document-item">
+              <div class="archive-column-document-expanded-item">
                 <div class="archive-column-document-icon"></div>
                 <div class="archive-column-document-info">
                   <div class="archive-column-document-title">
                     {{ document.title }}
                   </div>
-                   <div class="archive-column-document-author">
-
-                </div>
+                  <div class="archive-column-item-label-small" style="margin-top:5px;">PDF - 1.2mb</div> 
+                   <div class="archive-column-document-author"></div>
                 </div>
               </div>
             </a>

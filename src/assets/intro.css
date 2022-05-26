@@ -35,7 +35,7 @@ Body {
 
 
     a:link {
-        text-decoration: underline;
+        text-decoration: none;
         color: black;
         text-decoration-style: wavy;
         text-decoration-color: grey;
@@ -47,7 +47,7 @@ Body {
     }
 
     a:visited {
-        text-decoration: underline;
+        text-decoration: none;
         color: black;
         text-decoration-style: wavy;
         text-decoration-color: grey;
@@ -55,7 +55,7 @@ Body {
 
 
     a:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 
 
