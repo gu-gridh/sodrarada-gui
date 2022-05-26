@@ -4,7 +4,7 @@ import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
 
-const LIMIT = 10;
+const LIMIT = 15;
 
 const { remoteCollection, remoteFilteredCollection } = useStrapi();
 const store = useStore();
@@ -186,6 +186,7 @@ const expanded = ref("");
       <div class="archive-column" id="drawingcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Avbildningar</div>
+            <div class="all-button" @click="expanded = 'drawings'">Se alla</div>
         </div>
         <div
           v-for="image in orderByDate(paintings).slice(0, LIMIT)"
@@ -203,6 +204,7 @@ const expanded = ref("");
       <div class="archive-column" id="blueprintcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Uppritningar</div>
+            <div class="all-button" @click="expanded = 'photos'">Se alla</div>
         </div>
 
         <div
@@ -244,7 +246,7 @@ const expanded = ref("");
           <div class="archive-column-title">Filmer</div>
         </div>
         <div
-          v-for="video in orderByDate(videos).slice(0, LIMIT / 2)"
+          v-for="video in orderByDate(videos).slice(0, LIMIT * 100)"
           class="archive-column-item"
         >
           <router-link :to="'/video/' + video.id">
@@ -261,7 +263,7 @@ const expanded = ref("");
         </div>
 
         <div
-          v-for="model in orderByDate(models).slice(0, LIMIT / 2)"
+          v-for="model in orderByDate(models).slice(0, LIMIT * 100)"
           class="archive-column-item"
         >
           <router-link :to="'/model/' + model.id">
@@ -277,6 +279,7 @@ const expanded = ref("");
       <div class="archive-column-documents" id="documentcolumn">
         <div class="archive-column-top">
           <div class="archive-column-title">Projektdokument</div>
+            <div class="all-button" @click="expanded = 'photos'">Se alla</div>
         </div>
 
         <div
@@ -288,7 +291,7 @@ const expanded = ref("");
             style="flex-grow: 1; flex-basis: 0"
           >
             <a
-              v-for="document in orderByDate(documents)"
+              v-for="document in orderByDate(documents).slice(0, LIMIT * 2)"
               :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
             >
               <div class="archive-column-document-item">
@@ -329,7 +332,9 @@ const expanded = ref("");
     </div>
 
 <div style="padding:30px 50px 0 0; float:left; min-height:400px;">
+    
     <div v-show="expanded" id="expanded" style="clear: both">
+     
       <div v-if="expanded === 'reconstruction'">
         <div class="archive-column-top" >
           <div class="archive-column-title">Rekonstruktion</div>
@@ -401,6 +406,31 @@ const expanded = ref("");
           </template>
         </masonry-wall>
       </div>
+
+       <div v-if="expanded === 'drawings'">
+        <div class="archive-column-top" >
+          <div class="archive-column-title">Avbildningar</div>
+          <div class="all-button" @click="expanded = ''">Fäll ihop</div>
+        </div>
+
+        <masonry-wall
+          :items="orderByDate(paintings)"
+          :column-width="200"
+          :gap="16"
+        >
+          <template #default="{ item, index }">
+            <div class="archive-column-item">
+              <router-link :to="'/image/' + item.id">
+                <img
+                  :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                  :alt="item.description"
+                />
+              </router-link>
+            </div>
+          </template>
+        </masonry-wall>
+      </div>
+
     </div>
   </div>
     </div>
