@@ -52,7 +52,7 @@ const expanded = ref("");
 
 <template>
   <div id="top-container" style="margin-left: 100px; overflow: hidden">
-    <div id="archive-model">
+    <div id="archive-model" style="">
       <ThreeDViewer />
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>

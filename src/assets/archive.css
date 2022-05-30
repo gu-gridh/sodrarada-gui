@@ -76,7 +76,6 @@
     }
 
 
-
            .filtertag {
                font-family: monospace;
                float: left;
@@ -370,11 +369,11 @@
 
            #archive-model {
             position: absolute;
-            margin-top: 00px;
+            margin-top: -50px;
             margin-left: 30%;
             margin-right: auto;
-            width: 800px;
-            height: 800px;
+            width: 750px;
+            height: 850px;
             animation-name: PosterFade;
             animation-duration: 4s;
             animation-delay: 0s;

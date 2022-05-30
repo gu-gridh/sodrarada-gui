@@ -7,7 +7,7 @@
     alt="3d-modell av Södra Råda"
     camera-controls
     disable-zoom
-    camera-orbit="-45deg 80deg 160.0m"
+    camera-orbit="40deg 65deg 27m"
     exposure="1.0"
     skyboxangle="120"
     shadows="false"
@@ -36,8 +36,8 @@ const baseUrl = import.meta.env.BASE_URL;
 .model-viewer {
   height: 100%;
   width: 100%;
-  --progress-bar-color: rgba(0, 0, 0, 0);
-  --progress-bar-height: 30px;
+  --progress-bar-color: rgba(0, 0, 0, 1);
+  --progress-bar-height: 10px;
   --progress-mask: fff;
   --poster-color: transparent;
   --progress-mask: transparent;
@@ -72,12 +72,15 @@ const baseUrl = import.meta.env.BASE_URL;
 }
 
 #button-load-label {
+   font-family: 'Teko', sans-serif;
   color: black;
   padding: 10px;
-  font-size: 26px;
+  font-size: 30px;
   text-align: center;
   font-weight: 300;
   margin-top: 12%;
+   line-height: 1.0;
+   padding: 20px 10px 50px 10px;
 }
 
 @keyframes pulse {
