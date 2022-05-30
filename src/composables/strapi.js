@@ -11,7 +11,6 @@ export async function find(route, params = {}) {
       ? params[key].forEach((value) => urlParams.append(`${key}_in`, value))
       : urlParams.set(key, params[key])
   );
-  console.log(params, urlParams.toString());
   const response = await fetch(`${API_BASE}${route}?${urlParams}`);
   return await response.json();
 }
