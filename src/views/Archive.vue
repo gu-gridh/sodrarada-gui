@@ -3,7 +3,7 @@ import { ref, computed } from "vue";
 import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
-import "@/components/ThreeDViewer.vue";
+import ThreeDViewer from "@/components/ThreeDViewer.vue";
 
 const LIMIT = 15;
 
@@ -54,14 +54,6 @@ const expanded = ref("");
   <div id="top-container" style="margin-left: 100px; overflow: hidden">
     <div id="archive-model">
       <ThreeDViewer />
-
-      <div id="archive-model-loader">
-        <div id="archive-model-loader-label">
-          Klicka h&auml;r<br />
-          f&ouml;r att ladda in <br />
-          modellen<br />
-        </div>
-      </div>
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
   </div>

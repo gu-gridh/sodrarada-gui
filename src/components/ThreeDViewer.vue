@@ -3,7 +3,7 @@
     class="model-viewer"
     reveal="interaction"
     loading="auto"
-    src="@/assets/sr1300raw.glb"
+    :src="baseUrl + 'sr1300raw.glb'"
     alt="3d-modell av Södra Råda"
     camera-controls
     disable-zoom
@@ -28,13 +28,14 @@
 <script setup>
 import "@google/model-viewer";
 import "focus-visible";
+
+const baseUrl = import.meta.env.BASE_URL;
 </script>
 
 <style scoped>
 .model-viewer {
   height: 100%;
   width: 100%;
-  background-color: green;
   --progress-bar-color: rgba(0, 0, 0, 0);
   --progress-bar-height: 30px;
   --progress-mask: fff;
@@ -76,7 +77,7 @@ import "focus-visible";
   font-size: 26px;
   text-align: center;
   font-weight: 300;
-  margin-top: 20%;
+  margin-top: 12%;
 }
 
 @keyframes pulse {
