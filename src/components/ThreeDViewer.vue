@@ -34,7 +34,7 @@ import "focus-visible";
 .model-viewer {
   height: 100%;
   width: 100%;
-  background-color:green;
+  background-color: green;
   --progress-bar-color: rgba(0, 0, 0, 0);
   --progress-bar-height: 30px;
   --progress-mask: fff;
