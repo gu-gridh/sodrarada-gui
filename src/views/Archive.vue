@@ -315,7 +315,20 @@ const expanded = ref("");
                 :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
               >
                 <div class="archive-column-document-item">
-                  <div class="archive-column-document-icon"></div>
+                  <div class="archive-column-document-icon">
+                    <img
+                      v-if="document.image"
+                      :src="
+                        'https://sodrarada.dh.gu.se/api' + document.image.url
+                      "
+                      alt="Miniatyrbild"
+                    />
+                    <img
+                      v-else
+                      src="@/assets/graphics/article1icon.jpg"
+                      alt="Defaultminiatyr för dokument"
+                    />
+                  </div>
                   <div class="archive-column-document-info">
                     <div class="archive-column-document-title">
                       {{ document.title }}
@@ -566,7 +579,18 @@ const expanded = ref("");
               :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
             >
               <div class="archive-column-document-expanded-item">
-                <div class="archive-column-document-icon"></div>
+                <div class="archive-column-document-icon">
+                  <img
+                    v-if="document.image"
+                    :src="'https://sodrarada.dh.gu.se/api' + document.image.url"
+                    alt="Miniatyrbild"
+                  />
+                  <img
+                    v-else
+                    src="@/assets/graphics/article1icon.jpg"
+                    alt="Defaultminiatyr för dokument"
+                  />
+                </div>
                 <div class="archive-column-document-info">
                   <div class="archive-column-document-title" style="">
                     {{ document.title }}
