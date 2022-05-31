@@ -24,7 +24,7 @@
            @media screen and (max-width: 950px) {
             #archive-article-short {
                 width: 750px;
-                font-size: 35px;
+                font-size: 28px;
                 font-weight: 200;
                 margin-top:-60px;
             }
@@ -379,7 +379,7 @@
             margin-top: -50px;
             margin-left: 30%;
             margin-right: auto;
-            width: 600px;
+            width: 650px;
             height: 700px;
   
             animation-name: PosterFade;

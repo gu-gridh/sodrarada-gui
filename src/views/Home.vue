@@ -365,11 +365,11 @@ Kyrkan skulle inte flyttas, utan bevaras på plats.
         </div>
       </div>
       <div class="timeline-rightside">
-        <div class="timeline-info-indented" style="margin-top: -20px">
-       <p>Efter branden 2001 företogs arkeologiska utgrävningar och förundersökningar. 
+        <div class="timeline-info-indented" style="margin-top: 40px">
+       Efter branden 2001 företogs arkeologiska utgrävningar och förundersökningar. 
        Bevarade träbyggnader från medeltiden och museisamlingar med byggnadsmaterial och historiska verktyg studerades i detalj. 
        Rekonstruktionen startade 2006 och har bedrivits som ett forskningsprojekt vid Göteborgs universitet. Skogen och byggarbetsplatsen har fungerat som ett laboratorium för praktiska försök. 
-       Antaganden om arbetsmetoder, verktyg och konstruktioner har prövats i full skala. </p>
+       Antaganden om arbetsmetoder, verktyg och konstruktioner har prövats i full skala.
         </div>
         <div
           class="timeline-infographics-container-indented"

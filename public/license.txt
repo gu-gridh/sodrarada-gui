@@ -1,6 +1,6 @@
 Model Information:
-* title:	SampleScene
-* source:	https://sketchfab.com/3d-models/samplescene-63d1fca6852f4e58a3d870d728481043
+* title:	Sample2
+* source:	https://sketchfab.com/3d-models/sample2-b898511167714c7293648ff323ee1a63
 * author:	Heritage Visualisation Lab (https://sketchfab.com/hervislab)
 
 Model License:
@@ -8,4 +8,4 @@ Model License:
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "SampleScene" (https://sketchfab.com/3d-models/samplescene-63d1fca6852f4e58a3d870d728481043) by Heritage Visualisation Lab (https://sketchfab.com/hervislab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Sample2" (https://sketchfab.com/3d-models/sample2-b898511167714c7293648ff323ee1a63) by Heritage Visualisation Lab (https://sketchfab.com/hervislab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

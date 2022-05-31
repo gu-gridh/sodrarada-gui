@@ -5,10 +5,11 @@
     loading="auto"
     :src="baseUrl + 'scene.gltf'"
     alt="3d-modell av Södra Råda"
+   
     camera-controls
     disable-zoom
-    camera-orbit="-140deg 65deg 26m"
-    exposure="10.0"
+    camera-orbit="40deg 65deg 26.5m"
+    exposure="1.0"
     skyboxangle="0"
     shadows="false"
     shadow-intensity="0"

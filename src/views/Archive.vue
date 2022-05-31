@@ -105,7 +105,7 @@ const expanded = ref("");
 
           <div style="
           height: 300px; 
-          width:100%; 
+          width:90%; 
           z-index:100; 
           margin-top:2000px;
           position:absolute; 
