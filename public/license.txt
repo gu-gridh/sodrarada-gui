@@ -1,6 +1,6 @@
 Model Information:
-* title:	SRChurche
-* source:	https://sketchfab.com/3d-models/srchurche-ba0e8bed09494eddb13c01db41ec3932
+* title:	SampleScene
+* source:	https://sketchfab.com/3d-models/samplescene-63d1fca6852f4e58a3d870d728481043
 * author:	Heritage Visualisation Lab (https://sketchfab.com/hervislab)
 
 Model License:
@@ -8,4 +8,4 @@ Model License:
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "SRChurche" (https://sketchfab.com/3d-models/srchurche-ba0e8bed09494eddb13c01db41ec3932) by Heritage Visualisation Lab (https://sketchfab.com/hervislab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "SampleScene" (https://sketchfab.com/3d-models/samplescene-63d1fca6852f4e58a3d870d728481043) by Heritage Visualisation Lab (https://sketchfab.com/hervislab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

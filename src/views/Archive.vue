@@ -51,8 +51,8 @@ const expanded = ref("");
 </script>
 
 <template>
-  <div id="top-container" style="margin-left: 100px; overflow: hidden">
-    <div id="archive-model" style="">
+  <div id="top-container" style="padding-left:100px; overflow: hidden; ">
+    <div id="archive-model" style="z-index:0;">
       <ThreeDViewer />
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
@@ -68,7 +68,7 @@ const expanded = ref("");
     </div>
 
     <div id="filter-section" style="width: 100%; float: left; height: auto">
-      <div id="filter-container" style="float: left; height: auto">
+      <div id="filter-container" style="float: left; height: auto; z-index:2;">
         <div
           class="filtertag"
           :class="{ activeTag: !store.keywordFilter }"
