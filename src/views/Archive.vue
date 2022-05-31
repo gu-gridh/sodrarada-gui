@@ -70,17 +70,6 @@ const expanded = ref("");
       eros velit vestibulum mauris.
     </div>
 
-    <div id="archive-article-long" style="display: none">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel
-      consectetur odio, vel semper felis. Quisque pharetra laoreet magna sed
-      luctus. Etiam ultricies vehicula leo, at molestie eros consectetur a.
-      Vivamus vestibulum consequat ex, sit amet lobortis felis gravida id.
-      Vestibulum suscipit, augue vitae rutrum sodales, ex nunc dignissim nunc,
-      non suscipit eros velit vestibulum mauris. Morbi blandit nisl eu sagittis
-      fringilla. Pellentesque a augue at libero blandit iaculis. Proin ornare
-      fringilla nunc, in accumsan lectus lobortis at. Pellentesque in purus at
-      augue rutrum ultricies.
-    </div>
     <div id="filter-section" style="width: 100%; float: left; height: auto">
       <div id="filter-container" style="float: left; height: auto">
         <div
@@ -111,8 +100,21 @@ const expanded = ref("");
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
+          max-height:2300px;
+          overflow:hidden;
+          margin-bottom:50px;
         "
       >
+
+          <div style="
+          height: 300px; 
+          width:100%; 
+          z-index:100; 
+          margin-top:2000px;
+          position:absolute; 
+
+          background: linear-gradient(0deg, rgba(252,249,240,1) 0%, rgba(252,249,240,0) 90%);">    </div>
+
         <div class="archive-column" id="photomoderncolumn">
           <div class="archive-column-top">
             <div class="archive-column-title">Fotografier</div>

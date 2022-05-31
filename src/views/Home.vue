@@ -413,10 +413,7 @@ först för en midsommargudstjänst och senare även för dop och bröllop.
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info" style="">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          vel consectetur odio, vel semper felis. Quisque pharetra laoreet magna
-          sed luctus. Etiam ultricies vehicula leo, at molestie eros
-          consectetur.
+          Södra Råda Timmerkyrka invigdes den fjärde juni 2022.
         </div>
         <div class="timeline-infographics-container">
           <div class="timeline-infographics">
