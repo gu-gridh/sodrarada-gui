@@ -146,18 +146,20 @@
 
 
            .info-button {
-               float: left;
+            display:inline;
                margin-left: 10px;
                margin-top: 4px;
-               width: 18px;
+               width: 8px;
                height: 18px;
-               border-radius: 50%;
-               border-width: 1.5px;
+               padding:3px 11px 3px 11px;
+               border-radius: 5px;
+               border-width: 1px;
                border-style: solid;
                text-align: center;
                line-height: 1.0;
-               font-weight: bolder;
-               opacity: 0.4;
+         
+               color:black;
+               opacity: 1;
                cursor: pointer;
            }
 
