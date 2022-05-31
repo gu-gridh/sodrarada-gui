@@ -3,11 +3,11 @@
     class="model-viewer"
     reveal="interaction"
     loading="auto"
-    :src="baseUrl + 'sr1300raw.glb'"
+    :src="baseUrl + 'scene.gltf'"
     alt="3d-modell av Södra Råda"
     camera-controls
     disable-zoom
-    camera-orbit="40deg 65deg 27m"
+    camera-orbit="-140deg 65deg 27m"
     exposure="1.0"
     skyboxangle="120"
     shadows="false"

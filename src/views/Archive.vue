@@ -60,14 +60,11 @@ const expanded = ref("");
   <div id="main-container" style="padding: 0px 30px 30px 100px">
     <router-link to="/"> <div id="back"></div></router-link>
     <div id="archive-article-short">
-      Lorem ipsum dolor sit amet, consectetur <br />
-      adipiscing elit. Pellentesque vel consectetur <br />
-      odio, vel semper felis. Quisque pharetra laoreet <br />
-      magna sed luctus. Etiam ultricies vehicula leo, at <br />
-      molestie eros consectetur a. Vivamus vestibulum consequat <br />
-      ex, sit amet lobortis felis gravida id. Vestibulum suscipit, augue<br />
-      vitae rutrum sodales, ex nunc dignissim nunc, non suscipit <br />
-      eros velit vestibulum mauris.
+   Arkivet samlar och gör tillgängligt digitiserat<br> 
+   material rörande Södra Råda gamla kyrka, samt dokumentation <br>
+   i form av fotografier, filmer och rapporter som beskriver den process <br>
+   som ligger bakom rekonstruktionen. Filtrera materialet med hjälp av nyckelorden<br>
+   nedan, eller klicka på ”Visa alla" för att utforska allt material i en särskild kategori. 
     </div>
 
     <div id="filter-section" style="width: 100%; float: left; height: auto">
