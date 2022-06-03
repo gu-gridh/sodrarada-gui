@@ -105,21 +105,13 @@ const expanded = ref("");
           margin-bottom: 50px;
         "
       >
-        <div
-          style="
+        <div style="
             height: 300px;
             width: 90%;
             z-index: 100;
             margin-top: 2000px;
             position: absolute;
-
-            background: linear-gradient(
-              0deg,
-              rgba(252, 249, 240, 1) 0%,
-              rgba(252, 249, 240, 0) 90%
-            );
-          "
-        ></div>
+            background: linear-gradient(0deg,rgba(252, 249, 240, 1) 0%,rgba(252, 249, 240, 0) 90%);"></div>
 
         <div class="archive-column" id="photomoderncolumn">
           <div class="archive-column-top">
