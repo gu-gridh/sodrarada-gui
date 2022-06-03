@@ -51,8 +51,8 @@ const expanded = ref("");
 </script>
 
 <template>
-  <div id="top-container" style="padding-left:100px; overflow: hidden; ">
-    <div id="archive-model" style="z-index:0;">
+  <div id="top-container" style="padding-left: 100px; overflow: hidden">
+    <div id="archive-model" style="z-index: 0">
       <ThreeDViewer />
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
@@ -60,15 +60,18 @@ const expanded = ref("");
   <div id="main-container" style="padding: 0px 30px 30px 100px">
     <router-link to="/"> <div id="back"></div></router-link>
     <div id="archive-article-short">
-   Arkivet samlar och gör tillgängligt digitiserat<br> 
-   material rörande Södra Råda gamla kyrka, samt dokumentation <br>
-   i form av fotografier, filmer och rapporter som beskriver den process <br>
-   som ligger bakom rekonstruktionen. Filtrera materialet med hjälp av nyckelorden<br>
-   nedan, eller klicka på ”Visa alla" för att utforska allt material i en särskild kategori. 
+      Arkivet samlar och gör tillgängligt digitiserat<br />
+      material rörande Södra Råda gamla kyrka, samt dokumentation <br />
+      i form av fotografier, filmer och rapporter som beskriver den process
+      <br />
+      som ligger bakom rekonstruktionen. Filtrera materialet med hjälp av
+      nyckelorden<br />
+      nedan, eller klicka på ”Visa alla" för att utforska allt material i en
+      särskild kategori.
     </div>
 
     <div id="filter-section" style="width: 100%; float: left; height: auto">
-      <div id="filter-container" style="float: left; height: auto; z-index:2;">
+      <div id="filter-container" style="float: left; height: auto; z-index: 2">
         <div
           class="filtertag"
           :class="{ activeTag: !store.keywordFilter }"
@@ -97,20 +100,26 @@ const expanded = ref("");
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
-          max-height:2300px;
-          overflow:hidden;
-          margin-bottom:50px;
+          max-height: 2300px;
+          overflow: hidden;
+          margin-bottom: 50px;
         "
       >
+        <div
+          style="
+            height: 300px;
+            width: 90%;
+            z-index: 100;
+            margin-top: 2000px;
+            position: absolute;
 
-          <div style="
-          height: 300px; 
-          width:90%; 
-          z-index:100; 
-          margin-top:2000px;
-          position:absolute; 
-
-          background: linear-gradient(0deg, rgba(252,249,240,1) 0%, rgba(252,249,240,0) 90%);">    </div>
+            background: linear-gradient(
+              0deg,
+              rgba(252, 249, 240, 1) 0%,
+              rgba(252, 249, 240, 0) 90%
+            );
+          "
+        ></div>
 
         <div class="archive-column" id="photomoderncolumn">
           <div class="archive-column-top">
@@ -118,8 +127,6 @@ const expanded = ref("");
             <div class="all-button" @click="expanded = 'reconstruction'">
               Visa alla
             </div>
-
-          
           </div>
 
           <div
@@ -254,13 +261,13 @@ const expanded = ref("");
             v-for="video in orderByDate(videos).slice(0, LIMIT * 2)"
             class="archive-column-item-videomodel"
           >
-            <router-link :to="'/video/' + video.id">
+            <a :href="video.url" target="_blank">
               <img
                 v-if="video.image"
                 :src="'https://sodrarada.dh.gu.se/api' + video.image.url"
                 alt="video.title"
               />
-            </router-link>
+            </a>
             <div class="archive-column-item-label">{{ video.title }}</div>
             <div class="archive-column-item-label-small">7 minuter</div>
           </div>
@@ -354,7 +361,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -379,7 +386,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Äldre fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -404,7 +411,7 @@ const expanded = ref("");
           <div class="archive-column-top" style="">
             <div class="archive-column-title">Fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -429,7 +436,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -454,7 +461,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -479,7 +486,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -521,7 +528,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Filmer och modeller</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -571,7 +578,7 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Projektdokument</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-              <div class="info-button">i</div>
+            <div class="info-button">i</div>
           </div>
 
           <div class="archive-column-documents-expanded">
