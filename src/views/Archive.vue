@@ -144,7 +144,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -166,7 +166,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -185,7 +185,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -205,7 +205,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -226,7 +226,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -246,7 +246,7 @@ const expanded = ref("");
           >
             <router-link :to="'/image/' + image.id">
               <img
-                :src="`https://sodrarada.dh.gu.se/api/${image.image.formats.small.url}`"
+                :src="`https://sodrarada.dh.gu.se/backend${image.image.formats.small.url}`"
                 :alt="image.description"
               />
             </router-link>
@@ -382,7 +382,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -407,7 +407,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -432,7 +432,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -457,7 +457,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -482,7 +482,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -507,7 +507,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
@@ -524,7 +524,7 @@ const expanded = ref("");
               <div class="archive-column-item">
                 <router-link :to="'/image/' + item.id">
                   <img
-                    :src="`https://sodrarada.dh.gu.se/api/${item.image.formats.small.url}`"
+                    :src="`https://sodrarada.dh.gu.se/backend${item.image.formats.small.url}`"
                     :alt="item.description"
                   />
                 </router-link>
