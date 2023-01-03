@@ -22,11 +22,11 @@ const personName = (person) =>
   <div v-if="image.id">
     <div id="item-top-image" style="text-align: center">
       <div v-if="props.imageType == 'panorama'" id="item-top-pano">
-        <Panorama :src="'https://sodrarada.dh.gu.se/api' + image.image.url" />
+        <Panorama :src="'https://sodrarada.dh.gu.se/backend' + image.image.url" />
       </div>
       <img
         v-else
-        :src="'https://sodrarada.dh.gu.se/api' + image.image.url"
+        :src="'https://sodrarada.dh.gu.se/backend' + image.image.url"
         :alt="image.image.alt"
         style="height: 100%"
       />
@@ -69,7 +69,7 @@ const personName = (person) =>
         </div>
       </div>
 
-      <a :href="'https://sodrarada.dh.gu.se/api' + image.image.url">
+      <a :href="'https://sodrarada.dh.gu.se/backend' + image.image.url">
         <div class="download-container" style="width: 100%; float: left">
           <div class="download-button"></div>
           <div class="download-label">Ladda ner bild</div>

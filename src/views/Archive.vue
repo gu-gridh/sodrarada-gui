@@ -273,7 +273,7 @@ const expanded = ref("");
             <a :href="video.url" target="_blank">
               <img
                 v-if="video.image"
-                :src="'https://sodrarada.dh.gu.se/api' + video.image.url"
+                :src="'https://sodrarada.dh.gu.se/backend' + video.image.url"
                 alt="video.title"
               />
             </a>
@@ -292,7 +292,7 @@ const expanded = ref("");
             <router-link :to="'/model/' + model.id">
               <img
                 v-if="model.image"
-                :src="'https://sodrarada.dh.gu.se/api' + model.image.url"
+                :src="'https://sodrarada.dh.gu.se/backend' + model.image.url"
                 alt="model.title"
               />
             </router-link>
@@ -321,14 +321,15 @@ const expanded = ref("");
             >
               <a
                 v-for="document in orderByDate(documents).slice(0, LIMIT * 2)"
-                :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
+                :href="`https://sodrarada.dh.gu.se/backend${document.file.url}`"
               >
                 <div class="archive-column-document-item">
                   <div class="archive-column-document-icon">
                     <img
                       v-if="document.image"
                       :src="
-                        'https://sodrarada.dh.gu.se/api' + document.image.url
+                        'https://sodrarada.dh.gu.se/backend' +
+                        document.image.url
                       "
                       alt="Miniatyrbild"
                     />
@@ -550,7 +551,9 @@ const expanded = ref("");
                 <router-link :to="'/video/' + video.id">
                   <img
                     v-if="video.image"
-                    :src="'https://sodrarada.dh.gu.se/api' + video.image.url"
+                    :src="
+                      'https://sodrarada.dh.gu.se/backend' + video.image.url
+                    "
                     alt="video.title"
                   />
                 </router-link>
@@ -570,7 +573,9 @@ const expanded = ref("");
                 <router-link :to="'/model/' + model.id">
                   <img
                     v-if="model.image"
-                    :src="'https://sodrarada.dh.gu.se/api' + model.image.url"
+                    :src="
+                      'https://sodrarada.dh.gu.se/backend' + model.image.url
+                    "
                     alt="model.title"
                   />
                 </router-link>
@@ -593,13 +598,15 @@ const expanded = ref("");
           <div class="archive-column-documents-expanded">
             <a
               v-for="document in orderByDate(documents)"
-              :href="`https://sodrarada.dh.gu.se/api${document.file.url}`"
+              :href="`https://sodrarada.dh.gu.se/backend${document.file.url}`"
             >
               <div class="archive-column-document-expanded-item">
                 <div class="archive-column-document-icon">
                   <img
                     v-if="document.image"
-                    :src="'https://sodrarada.dh.gu.se/api' + document.image.url"
+                    :src="
+                      'https://sodrarada.dh.gu.se/backend' + document.image.url
+                    "
                     alt="Miniatyrbild"
                   />
                   <img
