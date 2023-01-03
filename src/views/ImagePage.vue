@@ -10,7 +10,9 @@ const { params } = useRoute();
 const { remoteObject } = useStrapi();
 const store = useStore();
 const { go } = useRouter();
-const image = remoteObject(`images/${params.id}`);
+const image = remoteObject(`images/${params.id}`, {
+  populate: "date,image,creator",
+});
 
 const personName = (person) =>
   [person.firstname, person.lastname].filter(Boolean).join(" ");
@@ -48,7 +50,8 @@ const personName = (person) =>
         <span>{{ image.image.width }} x {{ image.image.height }}</span> <br />
       </div>
       <div class="meta-container">
-        Skapare: <span>{{ image.creator.map(personName).join(", ") }}</span>
+        Skapare:
+        <span>{{ (image.creator || []).map(personName).join(", ") }}</span>
         <br />
         Licens: <span>Creative Commons 4.0 / PD</span> <br />
       </div>

@@ -18,26 +18,36 @@ const keywordsSorted = computed(() =>
 
 // Photo collections
 const photos = remoteFilteredCollection("images", {
-  type: "photograph",
+  "filters[type][$eq]": "photograph",
+  populate: "date,image",
 });
 const historical_photograph = remoteFilteredCollection("images", {
-  type: "historical_photograph",
+  "filters[type][$eq]": "historical_photograph",
+  populate: "date,image",
 });
 const photosMix = computed(() => [...historical_photograph, ...photos]);
 
 // Painting collections
 const paintings = remoteFilteredCollection("images", {
-  type: ["sketch", "painting"],
+  "filters[type][$eq]": ["sketch", "painting"],
+  populate: "date,image",
 });
 const blueprints = remoteFilteredCollection("images", {
-  type: "blueprint",
+  "filters[type][$eq]": "blueprint",
+  populate: "date,image",
 });
 const drawingsMix = computed(() => [...paintings, ...blueprints]);
 
 // Other collections
-const videos = remoteFilteredCollection("videos");
-const models = remoteFilteredCollection("models");
-const documents = remoteFilteredCollection("documents");
+const videos = remoteFilteredCollection("videos", {
+  populate: "date,image",
+});
+const models = remoteFilteredCollection("models", {
+  populate: "date,image",
+});
+const documents = remoteFilteredCollection("documents", {
+  populate: "date,image,file",
+});
 
 /** Order items by "about date" or creation date. */
 function orderByDate(items) {
@@ -105,13 +115,20 @@ const expanded = ref("");
           margin-bottom: 50px;
         "
       >
-        <div style="
+        <div
+          style="
             height: 300px;
             width: 90%;
             z-index: 100;
             margin-top: 2000px;
             position: absolute;
-            background: linear-gradient(0deg,rgba(252, 249, 240, 1) 0%,rgba(252, 249, 240, 0) 90%);"></div>
+            background: linear-gradient(
+              0deg,
+              rgba(252, 249, 240, 1) 0%,
+              rgba(252, 249, 240, 0) 90%
+            );
+          "
+        ></div>
 
         <div class="archive-column" id="photomoderncolumn">
           <div class="archive-column-top">

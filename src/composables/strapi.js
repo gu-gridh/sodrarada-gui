@@ -12,7 +12,23 @@ export async function find(route, params = {}) {
       : urlParams.set(key, params[key])
   );
   const response = await fetch(`${API_BASE}${route}?${urlParams}`);
-  return await response.json();
+  const data = (await response.json()).data;
+  if (Array.isArray(data)) {
+    return data.map(transformItem)
+  }
+  else {
+    console.log(transformItem(data))
+    return transformItem(data)
+  }
+}
+
+function transformItem({ id, attributes }) {
+  for (const prop in attributes) {
+    if (attributes[prop] && attributes[prop].data !== undefined) {
+      attributes[prop] = attributes[prop].data && transformItem(attributes[prop].data)
+    }
+  }
+  return ({ id, ...attributes })
 }
 
 export default function useStrapi() {
@@ -37,7 +53,7 @@ export default function useStrapi() {
     watchEffect(async () => {
       const paramsFiltered = { ...params };
       if (store.keywordFilter) {
-        paramsFiltered["keywords.id"] = store.keywordFilter;
+        paramsFiltered["filters[keywords][id][$eq]"] = store.keywordFilter;
       }
       collection.splice(0);
       const items = await find(route, paramsFiltered);
@@ -47,9 +63,9 @@ export default function useStrapi() {
     return collection;
   }
 
-  function remoteObject(route) {
+  function remoteObject(route, params = {}) {
     const collection = reactive({});
-    find(route).then((item) => Object.assign(collection, item));
+    find(route, params).then((item) => Object.assign(collection, item));
     return collection;
   }
 
