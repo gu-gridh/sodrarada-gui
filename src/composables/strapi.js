@@ -1,7 +1,7 @@
 import { reactive, watchEffect } from "vue";
 import useStore from "@/store";
 
-const API_BASE = "https://sodrarada.dh.gu.se/api/";
+const API_BASE = "https://sodrarada.dh.gu.se/backend/api/";
 
 export async function find(route, params = {}) {
   const urlParams = new URLSearchParams();
