@@ -115,21 +115,7 @@ const expanded = ref("");
           margin-bottom: 50px;
         "
       >
-        <div
-          style="
-            height: 300px;
-            width: 90%;
-            z-index: 100;
-            margin-top: 2000px;
-            position: absolute;
-            background: linear-gradient(
-              0deg,
-              rgba(252, 249, 240, 1) 0%,
-              rgba(252, 249, 240, 0) 90%
-            );
-          "
-        ></div>
-
+      <div class="gradient-overlay"></div>
         <div class="archive-column" id="photomoderncolumn">
           <div class="archive-column-top">
             <div class="archive-column-title">Fotografier</div>
@@ -656,4 +642,14 @@ const expanded = ref("");
   display: block;
   width: 100%;
 }
+
+.gradient-overlay {
+  height: 50px;
+  width: 90%;
+  z-index: 100;
+  margin-top: 2260px;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(252, 249, 240, 1) 0%, rgba(252, 249, 240, 0) 90%);
+}
+
 </style>

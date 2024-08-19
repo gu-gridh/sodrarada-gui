@@ -16,6 +16,16 @@ const image = remoteObject(`images/${params.id}`, {
 
 const personName = (person) =>
   [person.firstname, person.lastname].filter(Boolean).join(" ");
+
+const getCreators = (creator) => {
+  if (Array.isArray(creator)) {
+    return creator.map(personName).join(", ");
+  } else if (creator && typeof creator === "object") {
+    return personName(creator);
+  } else {
+    return "";
+  }
+};
 </script>
 
 <template>
@@ -51,7 +61,7 @@ const personName = (person) =>
       </div>
       <div class="meta-container">
         Skapare:
-        <span>{{ (image.creator || []).map(personName).join(", ") }}</span>
+        <span>{{ getCreators(image.creator) }}</span>
         <br />
         Licens: <span>Creative Commons 4.0 / PD</span> <br />
       </div>
