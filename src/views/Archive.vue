@@ -4,6 +4,7 @@ import useStore from "@/store";
 import useStrapi from "@/composables/strapi";
 import "@/assets/archive.css";
 import ThreeDViewer from "@/components/ThreeDViewer.vue";
+import Footer from "@/components/Footer.vue";
 
 const LIMIT = 15;
 
@@ -620,8 +621,7 @@ const expanded = ref("");
       </div>
     </div>
   </div>
-
-  <div id="foot" style="float: left; width: 100%"></div>
+  <Footer />
 </template>
 
 <style scoped>
@@ -644,12 +644,13 @@ const expanded = ref("");
 }
 
 .gradient-overlay {
-  height: 50px;
+  height: 200px;
   width: 90%;
   z-index: 100;
-  margin-top: 2260px;
+  margin-top: 2100px;
   position: absolute;
   background: linear-gradient(0deg, rgba(252, 249, 240, 1) 0%, rgba(252, 249, 240, 0) 90%);
+  pointer-events: none;
 }
 
 </style>

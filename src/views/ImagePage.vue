@@ -3,6 +3,7 @@ import { useRoute, useRouter } from "vue-router";
 import { watchEffect, onUnmounted, ref } from 'vue';
 import OpenSeadragon from 'openseadragon';
 import useStrapi from "@/composables/strapi";
+import Footer from "@/components/Footer.vue";
 import useStore from "@/store";
 import Panorama from "@/components/Panorama.vue";
 import "@/assets/item.css";
@@ -127,6 +128,7 @@ onUnmounted(() => {
       <div class="related-gallery"></div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style>

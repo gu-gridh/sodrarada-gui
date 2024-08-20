@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import Footer from "@/components/Footer.vue";
+
+</script>
 
 <template>
   <div id="site-container" style="overflow-x: hidden; width: 100%">
@@ -430,8 +433,7 @@ Kyrkan skulle inte flyttas, utan bevaras på plats.
       <router-link to="/archive">Arkivet</router-link>
     </div>
   </div>
-
-  <div id="foot" style="float: left; width: 100%">-</div>
+  <Footer />
 </template>
 
 <style scoped>
