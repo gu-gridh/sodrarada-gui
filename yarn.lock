@@ -1153,6 +1153,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"openseadragon@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "openseadragon@npm:5.0.0"
+  checksum: 0437806695487b46c308d449b9070e9b1b4154f32a804d991b392ca788153e1293289a7bba880eff03f23630198c08b4b8885c0aad3c8661ef0f6efb810e0891
+  languageName: node
+  linkType: hard
+
 "p-map@npm:^4.0.0":
   version: 4.0.0
   resolution: "p-map@npm:4.0.0"
@@ -1381,6 +1388,7 @@ __metadata:
     "@vitejs/plugin-vue": ^2.3.3
     "@yeger/vue-masonry-wall": ^3.0.32
     focus-visible: ^5.2.0
+    openseadragon: ^5.0.0
     pannellum: ^2.5.6
     pinia: ^2.0.14
     vite: ^2.9.9
