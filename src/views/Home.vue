@@ -122,12 +122,10 @@ import Footer from "@/components/Footer.vue";
         <div class="timeline-date-indented" style="">1400</div>
       </div>
       <div class="timeline-main" style="height: 150px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/amundicon.jpg"
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="">
@@ -150,12 +148,10 @@ import Footer from "@/components/Footer.vue";
         <div class="timeline-date-indented" style="">1600</div>
       </div>
       <div class="timeline-main" style="height: 130px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/painting2.jpg"
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="">
@@ -230,13 +226,11 @@ Sydportalen sattes igen och huvudingången genom vapenhuset placerades i ställe
         <div class="timeline-date-indented" style="">1800</div>
       </div>
       <div class="timeline-main" style="height: 150px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/painting3.jpg"
             alt=""
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="">
@@ -259,13 +253,11 @@ Sydportalen sattes igen och huvudingången genom vapenhuset placerades i ställe
         <div class="timeline-date-indented" style="">1913</div>
       </div>
       <div class="timeline-main" style="height: 260px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/1913ikon.jpg"
             alt=""
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="">
@@ -292,13 +284,11 @@ Kyrkan skulle inte flyttas, utan bevaras på plats.
         <div class="timeline-date-indented" style="">1981</div>
       </div>
       <div class="timeline-main" style="height: 150px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/1995still.jpg"
             alt=""
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="">
@@ -359,13 +349,11 @@ Kyrkan skulle inte flyttas, utan bevaras på plats.
         </div>
       </div>
       <div class="timeline-main" style="height: 200px">
-        <div class="timeline-picture">
           <img
             src="@/assets/graphics/rek1.jpg"
             alt=""
             class="timeline-infographics-image"
           />
-        </div>
       </div>
       <div class="timeline-rightside">
         <div class="timeline-info-indented" style="margin-top: 40px">

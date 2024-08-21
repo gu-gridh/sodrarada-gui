@@ -358,7 +358,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -383,7 +382,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Äldre fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -408,7 +406,6 @@ const expanded = ref("");
           <div class="archive-column-top" style="">
             <div class="archive-column-title">Fotografier</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -433,7 +430,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -458,7 +454,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -483,7 +478,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Avbildningar</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -525,7 +519,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Filmer och modeller</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <masonry-wall
@@ -579,7 +572,6 @@ const expanded = ref("");
           <div class="archive-column-top">
             <div class="archive-column-title">Projektdokument</div>
             <div class="all-button" @click="expanded = ''">Fäll ihop</div>
-            <div class="info-button">i</div>
           </div>
 
           <div class="archive-column-documents-expanded">
