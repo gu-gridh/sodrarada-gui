@@ -1,6 +1,12 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 
+const scrollToSites = () => {
+  const element = document.querySelector('.timeline-container');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <template>
@@ -52,7 +58,7 @@ import Footer from "@/components/Footer.vue";
     <div
       class="label"
       style="margin-top: 10px; cursor: pointer"
-      onclick="scrollToSites()"
+      @click="scrollToSites"
     >
       Rekonstruktionen
     </div>
