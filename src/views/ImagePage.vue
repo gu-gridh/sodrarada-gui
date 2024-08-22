@@ -1,21 +1,19 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import { watchEffect, onUnmounted, ref } from 'vue';
+import { watchEffect, watch, onUnmounted, ref, nextTick } from 'vue';
 import OpenSeadragon from 'openseadragon';
 import useStrapi from "@/composables/strapi";
 import Footer from "@/components/Footer.vue";
-import useStore from "@/store";
 import Panorama from "@/components/Panorama.vue";
 import "@/assets/item.css";
 
 const props = defineProps(["imageType"]);
-const { params } = useRoute();
-const { remoteObject } = useStrapi();
-const store = useStore();
+const { remoteObject, remoteFilteredCollection } = useStrapi(); 
 const { go } = useRouter();
-const image = remoteObject(`images/${params.id}`, {
-  populate: "date,image,creator",
-});
+const route = useRoute();
+
+const relatedImages = ref([]); //store related images
+const image = ref(null); //store the image object
 
 const personName = (person) =>
   [person.firstname, person.lastname].filter(Boolean).join(" ");
@@ -33,25 +31,56 @@ const getCreators = (creator) => {
 const viewerElement = ref(null); //DOM element
 const viewer = ref(null); //openSeadragon instance
 
-watchEffect(() => {
-  if (image.image && props.imageType !== 'panorama' && viewerElement.value) {
-    if (viewer.value) {
-      viewer.value.destroy();
-    }
+const fetchImage = () => {
+  image.value = remoteObject(`images/${route.params.id}`, {
+    populate: "date,image,creator",
+  });
+};
 
-    viewer.value = OpenSeadragon({
-      element: viewerElement.value,
-      zoomInButton: "zoom-in",
-      zoomOutButton: "zoom-out",
-      fullPageButton: "full-page",
-      showHomeControl: false,
-      tileSources: {
-        type: 'image',
-        url: image.image.url ? "https://sodrarada.dh.gu.se/backend" + image.image.url : null
-      },
+watch(
+  () => route.params.id,
+  () => {
+    fetchImage();
+  },
+  { immediate: true }
+);
+
+watchEffect(() => {
+  if (image.value?.image && props.imageType !== 'panorama') {
+    nextTick(() => {
+      if (viewerElement.value) {
+        if (viewer.value) {
+          viewer.value.destroy();
+        }
+
+        viewer.value = OpenSeadragon({
+          element: viewerElement.value,
+          zoomInButton: "zoom-in",
+          zoomOutButton: "zoom-out",
+          fullPageButton: "full-page",
+          showHomeControl: false,
+          tileSources: {
+            type: 'image',
+            url: image.value.image.url ? "https://sodrarada.dh.gu.se/backend" + image.value.image.url : null,
+          },
+        });
+
+        if (image.value.type) {
+          relatedImages.value = remoteFilteredCollection("images", {
+            "filters[type][$eq]": image.value.type, 
+            populate: "date,image",
+          });
+        }
+      } else {
+        console.warn('viewerElement is null');
+      }
     });
   }
 });
+
+const orderByDate = (images) => {
+  return [...images].sort((a, b) => new Date(b.date) - new Date(a.date));
+};
 
 onUnmounted(() => {
   if (viewer.value) {
@@ -121,17 +150,55 @@ onUnmounted(() => {
       </a>
       <br />
 
-      <div class="section-title" style="margin-top: 70px; width: 100%; float: left">
+      <div class="section-title" style="margin-top: 70px; margin-bottom: 40px; width: 100%; float: left">
         Relaterat
       </div>
+  
 
-      <div class="related-gallery"></div>
+      <div class="masonry-container">
+        <masonry-wall
+          :items="orderByDate(relatedImages)"
+          :column-width="200"
+          :gap="16"
+        >
+        <template #default="{ item, index }">
+          <div v-if="item && item.id" class="archive-column-item">
+            <router-link :to="'/image/' + item.id">
+              <img
+                :src="`https://sodrarada.dh.gu.se/backend${item.image?.formats?.small?.url}`"
+                :alt="item.description || ''"
+              />
+            </router-link>
+          </div>
+        </template>
+        </masonry-wall>
+      </div>
     </div>
   </div>
   <Footer />
 </template>
 
-<style>
+<style scoped>
+.masonry-container {
+  width: 100%; 
+  height: 800px;
+  margin: 0 auto; 
+  box-sizing: border-box;
+  padding-right: 75px;
+  overflow: hidden;
+}
+
+.archive-column-item img {
+  width: 100%; 
+  height: auto;
+  display: block;
+}
+
+.archive-column-item {
+  min-height: 10px;
+  height: auto;
+ }
+
 #ZoomIn {
   background: url(@/assets/graphics/plus.svg);
   background-size: 100%;
