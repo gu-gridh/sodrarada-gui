@@ -114,7 +114,7 @@ onUnmounted(() => {
     <div id="item-top-video" style="display: none"></div>
 
     <div id="metadata">
-      <div id="item-back" @click="go(-1)"></div>
+      <div id="item-back" @click="$router.push('/archive')"></div>
 
       <div class="section-title">{{ image.subject }}</div>
 
