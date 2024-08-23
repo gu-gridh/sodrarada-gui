@@ -68,7 +68,7 @@ const expanded = ref("");
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
   </div>
-  <div id="main-container" style="padding: 0px 30px 30px 100px">
+  <div id="main-container" style="padding: 0px 30px 100px 100px">
     <router-link to="/"> <div id="back"></div></router-link>
     <div id="archive-article-short">
       Arkivet samlar och gör tillgängligt digitiserat<br />

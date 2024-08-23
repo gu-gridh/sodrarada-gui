@@ -1,11 +1,10 @@
 #metadata {
     float: left;
-    padding: 20px 0 100px 100px;
+    padding: 20px 0 120px 100px;
+    display:flex;
+    flex-direction: column;
    
 }
-
-
-
 
 
 #item-back {
@@ -25,6 +24,7 @@
 
 @media screen and (max-width: 950px) {
     #item-back {
+        display:none;
         position: absolute;
         margin-left: 0px;
         margin-top: 15px;
@@ -74,11 +74,11 @@
     .section-title {
         font-size: 55px;
         margin-bottom: 10px;
-           margin-top: 100px;
+           margin-top: 40px;
     }
 
     .meta-section-title {
-        margin-top: 100px;
+        margin-top: 50px;
         font-size: 45px;
         line-height: 1.0;
         margin-bottom:20px;
@@ -139,8 +139,6 @@ float: left;
 }
 
 
-
-
 #panorama {
     width: 100%;
     height: 100%;
@@ -178,14 +176,13 @@ float: left;
         column-count: 1;
         font-size: 32px;
     }
-}
-
-@media screen and (max-width: 950px) {
     .meta-article-solo {
         column-count: 1;
         font-size: 32px;
     }
 }
+
+
 
 .meta-container {
     float:left;
@@ -237,9 +234,6 @@ float: left;
 
 .repository-button {
     cursor: pointer;
-  
- 
-
     background: url(graphics/interface/linkbutton.png);
     background-size: 35px 35px;
     background-repeat: no-repeat;
@@ -267,28 +261,26 @@ float: left;
     
     .download-container {
         width: auto;
-        margin-top: 0px;
+        margin-top: -40px;
 
     }
     
     
     .download-label {
-        margin-top: 4px;
-        font-size: 38px;
+        margin-top: 0px;
+        font-size: 35px;
     }
     
     .download-button {
         cursor: pointer;
- 
- 
         background: url(graphics/interface/download-button.png);
-        background-size: 55px 55px;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         background-color: RGBA(30, 30, 30, 0.0);
         font-size: 12px;
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
         position: relative;
         margin-right: 20px;
         float: left;

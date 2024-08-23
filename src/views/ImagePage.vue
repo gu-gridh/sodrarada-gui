@@ -55,6 +55,7 @@ watchEffect(() => {
 
         viewer.value = OpenSeadragon({
           element: viewerElement.value,
+          immediateRender: true,
           zoomInButton: "zoom-in",
           zoomOutButton: "zoom-out",
           fullPageButton: "full-page",
@@ -123,7 +124,7 @@ onUnmounted(() => {
       </div>
 
       <div class="meta-section-title">Specifikationer</div>
-
+      <div id="metadata-columns">
       <div class="meta-container">
         Datering: <span>{{ image.date && image.date.year }}</span> <br />
         Upplösning:
@@ -135,22 +136,23 @@ onUnmounted(() => {
         <br />
         Licens: <span>Creative Commons 4.0 / PD</span> <br />
       </div>
+    </div>
 
-      <div id="filter-container" style="width: 100%; float: left; margin-bottom: 30px">
+      <div id="filter-container" style="width: 100%; float: left;">
         <div v-for="keyword in image.keywords" :key="keyword.id" class="filtertag">
           {{ keyword.label }}
         </div>
       </div>
 
       <a :href="'https://sodrarada.dh.gu.se/backend' + image.image.url">
-        <div class="download-container" style="width: 100%; float: left">
+        <div class="download-container" style="">
           <div class="download-button"></div>
           <div class="download-label">Ladda ner bild</div>
         </div>
       </a>
       <br />
 
-      <div class="section-title" style="margin-top: 70px; margin-bottom: 40px; width: 100%; float: left">
+      <div class="section-title" style="margin-top: 30px; margin-bottom: 20px; width: 100%; float: left">
         Relaterat
       </div>
   
@@ -181,7 +183,7 @@ onUnmounted(() => {
 <style scoped>
 .masonry-container {
   width: 100%; 
-  height: 800px;
+  height: auto;
   margin: 0 auto; 
   box-sizing: border-box;
   padding-right: 75px;
