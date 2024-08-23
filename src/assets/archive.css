@@ -1,3 +1,12 @@
+
+#top-container{
+    padding-left: 100px; overflow: hidden
+}
+
+#main-archive-container{
+    padding: 0px 30px 100px 100px;
+    width:100vw;
+}
 #archive-title {
                font-family: 'Teko', sans-serif;
                font-weight: 300;
@@ -21,12 +30,42 @@
            
            }
 
+           #archive-article-short-mobile {
+            display:none;
+       
+        }
+
            @media screen and (max-width: 950px) {
+            #top-container{
+                padding-left: 10px;
+            }
+
+            #main-archive-container{
+                padding: 0px 0px 0px 20px;
+                width:100vw;
+              
+            }
+
+            #archive-title {
+             word-spacing: 800px;
+                font-size: 160px;
+                margin-top: 40px;
+                margin-left:10px;
+           
+            }
+
             #archive-article-short {
-                width: 750px;
-                font-size: 28px;
+                display:none;
+              
+            }
+
+            #archive-article-short-mobile {
+                display:block;
+                width: auto;
+                font-size: 22px;
                 font-weight: 200;
-                margin-top:-60px;
+                margin-top:30px;
+                padding:0px 20px 0px 0px;
             }
         }
 
@@ -53,6 +92,7 @@
 
            @media screen and (max-width: 950px) {
             #back {
+                display:none;
                 margin-top:20px;
                 height: 70px;
                width: 70px;
@@ -72,11 +112,10 @@
 
         @media screen and (max-width: 950px) {
         #filter-container{
-         
             margin-top:50px;
-            width:100%;
+            width:auto;
             z-index:1000;
-            padding:0px 0px 30px 0px;
+            padding:0px 30px 30px 0px;
             
         }
     }
@@ -98,10 +137,9 @@
 
            @media screen and (max-width: 950px) {
             .filtertag {
-               
                 margin-right: 15px;
                 margin-bottom: 15px;
-                font-size: 24px;
+                font-size: 16px;
                 font-weight: 100;
                 border-radius: 5px;
                 padding: 5px 10px 5px 10px;
@@ -218,10 +256,13 @@
 
         @media screen and (max-width: 950px) {
 
+        
+
           .archive-column-documents-expanded {
             columns:1;
   
           }
+
         }
 
            .archive-column-item {
@@ -510,22 +551,25 @@
 
             margin-bottom: 10px;
             height: 65px;
+            display:flex;
+            flex-direction: column;
         }
 
         .archive-column-title {
             float: left;
             font-weight: 100;
             text-align: left;
-            font-size: 58px;
+            font-size: 30px;
             line-height:0.9;
         }
 
 
         .all-button {
             float: left;
-            margin-left: 15px;
+            width:50px;
+            margin-left: 0px;
             margin-top: 10px;
-            font-size: 24px;
+            font-size: 14px;
         }
 
         #archive-model {
@@ -535,6 +579,7 @@
       
             width: 550px;
             height: 550px;
+            display:none;
             }
 
             #archive-model-loader {

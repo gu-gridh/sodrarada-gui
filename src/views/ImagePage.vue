@@ -204,6 +204,13 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
+@media screen and (max-width: 650px) {
+  .masonry-container {
+  width: 100%;
+  overflow:hidden;
+}
+}
+
 .archive-column-item img {
   width: 100%; 
   height: auto;

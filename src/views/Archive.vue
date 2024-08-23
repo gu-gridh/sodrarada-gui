@@ -62,13 +62,13 @@ const expanded = ref("");
 </script>
 
 <template>
-  <div id="top-container" style="padding-left: 100px; overflow: hidden">
+  <div id="top-container" style="">
     <div id="archive-model" style="z-index: 0">
       <ThreeDViewer />
     </div>
     <div id="archive-title">S&ouml;dra R&aring;da Arkiv</div>
   </div>
-  <div id="main-container" style="padding: 0px 30px 100px 100px">
+  <div id="main-archive-container" style="">
     <router-link to="/"> <div id="back"></div></router-link>
     <div id="archive-article-short">
       Arkivet samlar och gör tillgängligt digitiserat<br />
@@ -79,6 +79,12 @@ const expanded = ref("");
       nyckelorden<br />
       nedan, eller klicka på ”Visa alla" för att utforska allt material i en
       särskild kategori.
+    </div>
+
+    <div id="archive-article-short-mobile">
+      Arkivet samlar och gör tillgängligt digitiserat material rörande Södra Råda gamla kyrka, samt dokumentation
+      i form av fotografier, filmer och rapporter som beskriver den process som ligger bakom rekonstruktionen. Filtrera materialet med hjälp av
+      nyckelorden nedan, eller klicka på ”Visa alla" för att utforska allt material i en särskild kategori.
     </div>
 
     <div id="filter-section" style="width: 100%; float: left; height: auto">
