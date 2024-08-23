@@ -249,9 +249,6 @@ const expanded = ref("");
         <div class="archive-column" id="filmcolumn">
           <div class="archive-column-top">
             <div class="archive-column-title">Filmer</div>
-            <div class="all-button" @click="expanded = 'videomodels'">
-              Visa alla
-            </div>
           </div>
           <div
             v-for="video in orderByDate(videos).slice(0, LIMIT * 2)"
@@ -276,13 +273,13 @@ const expanded = ref("");
             v-for="model in orderByDate(models).slice(0, LIMIT * 2)"
             class="archive-column-item-videomodel"
           >
-            <router-link :to="'/model/' + model.id">
-              <img
+          <a :href="model.url" target="_blank">
+            <img
                 v-if="model.image"
                 :src="'https://sodrarada.dh.gu.se/backend' + model.image.url"
                 alt="model.title"
               />
-            </router-link>
+          </a>
             <div class="archive-column-item-label">{{ model.title }}</div>
             <div class="archive-column-item-label-small">
               Texturerad trådmodell
