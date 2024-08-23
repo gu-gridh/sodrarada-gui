@@ -39,8 +39,10 @@ const fetchImage = () => {
 
 watch(
   () => route.params.id,
-  () => {
-    fetchImage();
+  (newId, oldId) => {
+    if (newId) {
+      fetchImage();
+    }
   },
   { immediate: true }
 );
