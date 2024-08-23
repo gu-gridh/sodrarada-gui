@@ -2,7 +2,7 @@
   <model-viewer
     class="model-viewer"
     reveal="interaction"
-    loading="auto"
+    loading="eager"
     :src="baseUrl + 'scene.gltf'"
     alt="3d-modell av Södra Råda"
    
@@ -38,8 +38,9 @@ const baseUrl = import.meta.env.BASE_URL;
   height: 100%;
   width: 100%;
   z-index:1;
+  --prgress-bar-top:300px;
   --progress-bar-color: rgba(0, 0, 0, 1);
-  --progress-bar-height: 10px;
+  --progress-bar-height: 0px;
   --progress-mask: fff;
   --poster-color: transparent;
   --progress-mask: transparent;
