@@ -65,6 +65,7 @@ watchEffect(() => {
             url: image.value.image.url ? "https://sodrarada.dh.gu.se/backend" + image.value.image.url : null,
           },
         });
+        
 
         if (image.value.type) {
           relatedImages.value = remoteFilteredCollection("images", {
@@ -98,7 +99,9 @@ onUnmounted(() => {
       <Panorama :src="'https://sodrarada.dh.gu.se/backend' + image.image.url" />
     </div>
     <template v-else>
-      <div ref="viewerElement" id="openseadragon-viewer" style="height: 100%"></div>
+      <div ref="viewerElement" id="openseadragon-viewer" style="height: 100%">
+        <div style="width:100%; top:45%; color:white; position:absolute">Bilden laddas...</div>
+      </div>
       <div id="ToolbarVertical">
         <a id="full-page" href="#full-page">
           <div id="FullPage" class="NavButton"></div>
