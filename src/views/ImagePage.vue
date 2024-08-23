@@ -67,7 +67,16 @@ watchEffect(() => {
             url: image.value.image.url ? "https://sodrarada.dh.gu.se/backend" + image.value.image.url : null,
           },
         });
-        
+
+        const loadingTextDiv = viewerElement.value.querySelector('.loading-text');
+
+        viewer.value.addHandler('full-screen', function(event) {
+          if (event.fullScreen) {
+            loadingTextDiv.style.display = 'none';
+          } else {
+            loadingTextDiv.style.display = 'block';
+          }
+        });
 
         if (image.value.type) {
           relatedImages.value = remoteFilteredCollection("images", {
@@ -102,7 +111,7 @@ onUnmounted(() => {
     </div>
     <template v-else>
       <div ref="viewerElement" id="openseadragon-viewer" style="height: 100%">
-        <div style="width:100%; top:45%; color:white; position:absolute">Bilden laddas...</div>
+        <div class="loading-text" style="width:100%; top:45%; color:white; position:absolute">Bilden laddas...</div>
       </div>
       <div id="ToolbarVertical">
         <a id="full-page" href="#full-page">
