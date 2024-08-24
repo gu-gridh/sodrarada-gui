@@ -48,7 +48,7 @@
     height: auto;
     text-align: left;
     margin-top: 50px;
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
     font-size: 40px;
     line-height: 1.0;
@@ -72,14 +72,16 @@
 
 @media screen and (max-width: 950px) {
     .section-title {
-        font-size: 55px;
+        font-size: 45px;
         margin-bottom: 10px;
-           margin-top: 40px;
+        margin-top: 40px;
+        padding-right:20px;
+        width:auto;
     }
 
     .meta-section-title {
         margin-top: 50px;
-        font-size: 45px;
+        font-size: 35px;
         line-height: 1.0;
         margin-bottom:20px;
     }
@@ -89,8 +91,8 @@
         padding: 20px 0 120px 20px;
         display:flex;
         flex-direction: column;
-        width:100%;
-       
+        width:auto;
+        font-weight:200; 
     }
 }
 
@@ -183,11 +185,11 @@ float: left;
 @media screen and (max-width: 950px) {
     .meta-article {
         column-count: 1;
-        font-size: 32px;
+        font-size: 22px;
     }
     .meta-article-solo {
         column-count: 1;
-        font-size: 32px;
+        font-size: 22px;
     }
 }
 
@@ -213,8 +215,8 @@ float: left;
 @media screen and (max-width: 950px) {
     .meta-container {
         margin-top: 0px;
-        width: 550px;
-        font-size: 26px;
+        width: auto;
+        font-size: 22px;
         line-height: 2.0;
     }
 }
@@ -277,7 +279,7 @@ float: left;
     
     .download-label {
         margin-top: 0px;
-        font-size: 35px;
+        font-size: 28px;
     }
     
     .download-button {
@@ -288,18 +290,15 @@ float: left;
         background-position: center;
         background-color: RGBA(30, 30, 30, 0.0);
         font-size: 12px;
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
         position: relative;
-        margin-right: 20px;
+        margin-right: 10px;
         float: left;
     }
 
     .repository-button {
         cursor: pointer;
-  
- 
-
         background: url(graphics/interface/linkbutton.png);
         background-size: 55px 55px;
         background-repeat: no-repeat;

@@ -38,6 +38,7 @@
            @media screen and (max-width: 950px) {
             #top-container{
                 padding-left: 10px;
+                width:100vw;
             }
 
             #main-archive-container{
