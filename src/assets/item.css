@@ -3,6 +3,7 @@
     padding: 20px 0 120px 100px;
     display:flex;
     flex-direction: column;
+    font-weight:200;
    
 }
 
@@ -43,7 +44,6 @@
 
 
 .section-title {
-
     display:block;
     height: auto;
     text-align: left;
@@ -226,6 +226,7 @@ float: left;
     display:block;
     float:left;
     margin-top: 0px;
+    font-weight: 200;;
 }
 
 .download-button {

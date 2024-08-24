@@ -5,7 +5,7 @@
 
 #main-archive-container{
     padding: 0px 30px 100px 100px;
-    width:100vw;
+    width:auto;
 }
 #archive-title {
                font-family: 'Teko', sans-serif;

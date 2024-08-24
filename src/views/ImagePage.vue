@@ -171,7 +171,7 @@
       </div>
 
       <div class="masonry-container">
-        <masonry-wall :items="orderByDate(relatedImages)" :column-width="200" :gap="16">
+        <masonry-wall :items="orderByDate(relatedImages)" :column-width="100" :gap="16">
           <template #default="{ item, index }">
             <div v-if="item && item.id" class="archive-column-item">
               <router-link :to="'/image/' + item.id">
@@ -196,6 +196,7 @@
     box-sizing: border-box;
     padding-right: 75px;
     overflow: hidden;
+    padding-top:20px;
   }
 
   @media screen and (max-width: 650px) {
