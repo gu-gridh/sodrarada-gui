@@ -19,14 +19,6 @@ Body {
 
 
 
-@media screen and (max-device-width: 950px) {
-
-    body {
-        width: auto;
-        padding-bottom: 0px;
-    }
-}
-
 
 a:link {
     text-decoration: none;
@@ -85,16 +77,6 @@ a:active {
         margin-top: -43%;
         width: 45%;
         padding-top: 7%;
-
-    }
-}
-
-@media screen and (max-width: 950px) {
-    #srlogotype {
-        margin-top: -40%;
-        width: 76%;
-        padding-top: 12%;
-
 
     }
 }
@@ -328,7 +310,111 @@ a:active {
     }
 }
 
-@media screen and (max-width: 950px) {
+
+
+.timeline-infographics {
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+    margin-top: 30px;
+    transition: all .2s ease-in-out;
+}
+
+
+.timeline-infographics:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(110%);
+}
+
+.timeline-infographics-image {
+    width: 100%;
+    margin-left: 150px;
+    height: 100%;
+}
+
+.timeline-infographics-label {
+    margin-top: 5px;
+    height: 20px;
+}
+
+
+.timeline-picture {
+
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    transition: all .2s ease-in-out;
+}
+
+.timeline-picture:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(110%);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.timeline {
+    width: 0px;
+    height: 50px;
+    border-style: dotted;
+    border-color: rgb(185, 24, 24);
+    border-image-source: url(@/assets/graphics/dots.svg);
+    border-image-slice: 25% 100%;
+    border-image-repeat: round;
+    border-width: 0px 20px 0px 0px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+
+.label {
+    text-align: center;
+    font-size: 18pt;
+    padding: 2px 2px 8px 2px;
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    font-weight:200;
+}
+
+.lowered{
+    margin-top:40px;
+}
+
+
+.label-image {
+    margin-right: auto;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    margin-top: 60px;
+    background-image: url(@/assets/graphics/interface/book.png);
+    background-size: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        width: auto;
+        padding-bottom: 0px;
+    }
+    
+    #srlogotype {
+        margin-top: -40%;
+        width: 76%;
+        padding-top: 12%;
+
+
+    }
+    
     .articletext {
         columns: 1;
         font-size: 18px;
@@ -456,43 +542,13 @@ a:active {
         padding: 0px;
         margin-bottom: 0px;
     }
-}
-
-.timeline-infographics {
-    cursor: pointer;
-    float: left;
-    margin-right: 10px;
-    margin-top: 30px;
-    transition: all .2s ease-in-out;
-}
-
-@media screen and (max-width: 950px) {
+    
     .timeline-infographics {
         flex-grow: 1;
         flex-basis: 0;
 
     }
-
-}
-
-.timeline-infographics:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(110%);
-}
-
-.timeline-infographics-image {
-    width: 100%;
-    margin-left: 150px;
-    height: 100%;
-}
-
-.timeline-infographics-label {
-    margin-top: 5px;
-    height: 20px;
-}
-
-@media screen and (max-width: 950px) {
+    
     .timeline-infographics-label {
         text-align: center;
         font-size: 22px;
@@ -503,26 +559,7 @@ a:active {
     .timeline-infographics-image {
         margin-left: 0px;
     }
-}
-
-.timeline-picture {
-
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    transition: all .2s ease-in-out;
-}
-
-.timeline-picture:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(110%);
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-
-}
-
-@media screen and (max-width: 950px) {
+    
     .timeline-picture {
 
         margin-top: 10px;
@@ -531,45 +568,6 @@ a:active {
         width: 200px;
 
     }
-}
-
-.timeline {
-    width: 0px;
-    height: 50px;
-    border-style: dotted;
-    border-color: rgb(185, 24, 24);
-    border-image-source: url(@/assets/graphics/dots.svg);
-    border-image-slice: 25% 100%;
-    border-image-repeat: round;
-    border-width: 0px 20px 0px 0px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-
-
-
-
-.label {
-    text-align: center;
-    font-size: 18pt;
-    padding: 2px 2px 8px 2px;
-    border-radius: 10px;
-
-    margin-left: auto;
-    margin-right: auto;
-    width: 180px;
-    font-weight:200;
-}
-
-.lowered{
-    margin-top:40px;
-}
-
-@media screen and (max-width: 950px) {
     .label {
         font-size: 22pt;
         width: 260px;
@@ -596,20 +594,6 @@ a:active {
         margin-top:0px;
     }
 
-}
-
-
-.label-image {
-    margin-right: auto;
-    margin-left: auto;
-    width: 30px;
-    height: 30px;
-    margin-top: 60px;
-    background-image: url(@/assets/graphics/interface/book.png);
-    background-size: 30px;
-}
-
-@media screen and (max-width: 950px) {
     .label-image {
         width: 40px;
         height: 40px;
@@ -642,7 +626,7 @@ a:active {
     margin-top: 55px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .scroll {
         display: none;
     }

@@ -152,7 +152,7 @@
         </div>
       </div>
 
-      <div id="filter-container" style="float: left;">
+      <div id="filter-container">
         <div v-for="keyword in image.keywords" :key="keyword.id" class="filtertag">
           {{ keyword.label }}
         </div>

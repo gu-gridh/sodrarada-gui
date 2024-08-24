@@ -620,6 +620,14 @@ const expanded = ref("");
 </template>
 
 <style scoped>
+    @media screen and (max-width: 800px) {
+        #filter-container{
+            margin-top:50px;
+            width:auto;
+            z-index:1000;
+            padding:0px 30px 30px 0px; 
+        }
+      }
 .archive-column-item {
   min-height: 10px;
   height: auto;

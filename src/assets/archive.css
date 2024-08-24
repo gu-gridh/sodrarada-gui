@@ -35,40 +35,7 @@
        
         }
 
-           @media screen and (max-width: 950px) {
-            #top-container{
-                padding-left: 10px;
-                width:100vw;
-            }
-
-            #main-archive-container{
-                padding: 0px 0px 0px 20px;
-                width:100vw;
-              
-            }
-
-            #archive-title {
-             word-spacing: 800px;
-                font-size: 160px;
-                margin-top: 40px;
-                margin-left:10px;
            
-            }
-
-            #archive-article-short {
-                display:none;
-              
-            }
-
-            #archive-article-short-mobile {
-                display:block;
-                width: auto;
-                font-size: 22px;
-                font-weight: 200;
-                margin-top:30px;
-                padding:0px 20px 0px 0px;
-            }
-        }
 
            #back {
                cursor: pointer;
@@ -91,18 +58,6 @@
                background-color: rgba(255, 255, 255, 0.5);
            }
 
-           @media screen and (max-width: 950px) {
-            #back {
-                display:none;
-                margin-top:20px;
-                height: 70px;
-               width: 70px;
-               background: url(@/assets/graphics/interface/back-black.png);
-               background-size: 45px 45px;
-               background-repeat: no-repeat;
-               background-position: center;
-            }
-        }
 
         #filter-container{
          z-index:1;
@@ -110,16 +65,6 @@
             max-width:1020px;
             height:auto; 
         }
-
-        @media screen and (max-width: 950px) {
-        #filter-container{
-            margin-top:50px;
-            width:auto;
-            z-index:1000;
-            padding:0px 30px 30px 0px;
-            
-        }
-    }
 
 
            .filtertag {
@@ -135,18 +80,6 @@
                transition: all 0.1s ease-in-out;
                cursor: pointer;
            }
-
-           @media screen and (max-width: 950px) {
-            .filtertag {
-                margin-right: 15px;
-                margin-bottom: 15px;
-                font-size: 16px;
-                font-weight: 100;
-                border-radius: 5px;
-                padding: 5px 10px 5px 10px;
-             
-            }
-        }
 
            .activeTag {
                background-color: rgb(158, 60, 60);
@@ -255,16 +188,7 @@
           }
         }
 
-        @media screen and (max-width: 950px) {
 
-        
-
-          .archive-column-documents-expanded {
-            columns:1;
-  
-          }
-
-        }
 
            .archive-column-item {
                margin-bottom: 10px;
@@ -546,7 +470,71 @@
         }
     }
 
-    @media screen and (max-width: 950px) {
+ 
+
+    @media screen and (max-width: 800px) {
+        #filter-container{
+         
+        }
+
+        #back {
+            display:none;
+            margin-top:20px;
+            height: 70px;
+           width: 70px;
+           background: url(@/assets/graphics/interface/back-black.png);
+           background-size: 45px 45px;
+           background-repeat: no-repeat;
+           background-position: center;
+        }
+
+        .filtertag {
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 100;
+            border-radius: 5px;
+            padding: 5px 10px 5px 10px;
+         
+        }
+
+        .archive-column-documents-expanded {
+            columns:1;
+  
+          }
+
+        #top-container{
+            padding-left: 10px;
+            width:100vw;
+        }
+
+        #main-archive-container{
+            padding: 0px 0px 0px 20px;
+            width:100vw;
+          
+        }
+
+        #archive-title {
+         word-spacing: 800px;
+            font-size: 160px;
+            margin-top: 40px;
+            margin-left:10px;
+       
+        }
+
+        #archive-article-short {
+            display:none;
+          
+        }
+
+        #archive-article-short-mobile {
+            display:block;
+            width: auto;
+            font-size: 22px;
+            font-weight: 200;
+            margin-top:30px;
+            padding:0px 20px 0px 0px;
+        }
 
         .archive-column-top {
 
