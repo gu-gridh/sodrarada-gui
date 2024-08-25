@@ -247,10 +247,7 @@ const expanded = ref("");
         </div>
 
         <div
-          class="archive-column"
-          id="dividercolumn"
-          style="min-width: 20px; max-width: 20px"
-        ></div>
+          class="archive-column" id="dividercolumn"></div>
 
         <div class="archive-column" id="filmcolumn">
           <div class="archive-column-top">
