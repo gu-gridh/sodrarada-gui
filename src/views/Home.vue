@@ -322,11 +322,11 @@
           2006-2021
         </div>
       </div>
-      <div class="timeline-main" style="height: auto">
+      <div class="timeline-main" style="height: 180px">
         <img src="@/assets/graphics/rek1.jpg" alt="" class="timeline-infographics-image" />
       </div>
       <div class="timeline-rightside">
-        <div class="timeline-info-indented lowered">
+        <div class="timeline-info-indented">
           Efter branden 2001 företogs arkeologiska utgrävningar och förundersökningar.
           Bevarade träbyggnader från medeltiden och museisamlingar med byggnadsmaterial och historiska verktyg
           studerades i detalj.
@@ -360,7 +360,7 @@
         <div class="timeline-info" style="">
           Södra Råda Timmerkyrka invigdes den fjärde juni 2022.
         </div>
-        <div class="timeline-infographics-container">
+        <!-- <div class="timeline-infographics-container">
           <div class="timeline-infographics">
             <router-link to="/panorama/109">
               <img src="@/assets/graphics/1300navepanorama.jpg" alt="" class="timeline-infographics-image-secondary" />
@@ -375,7 +375,7 @@
             </router-link>
             <div class="timeline-infographics-label" style="">Koret</div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
