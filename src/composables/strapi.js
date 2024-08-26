@@ -17,7 +17,7 @@ export async function find(route, params = {}) {
     return data.map(transformItem)
   }
   else {
-    console.log(transformItem(data))
+    //console.log(transformItem(data))
     return transformItem(data)
   }
 }

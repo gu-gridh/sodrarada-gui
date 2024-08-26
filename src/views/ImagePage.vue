@@ -7,13 +7,13 @@
   import Panorama from "@/components/Panorama.vue";
   import "@/assets/item.css";
 
-  const props = defineProps(["imageType"]);
+  // const props = defineProps(["imageType"]);
   const { remoteObject, remoteFilteredCollection } = useStrapi();
   const { go } = useRouter();
   const route = useRoute();
 
-  const relatedImages = ref([]); //store related images
-  const image = ref(null); //store the image object
+  const relatedImages = ref([]); // store related images
+  const image = ref(null); // store the image object
 
   const personName = (person) =>
     [person.firstname, person.lastname].filter(Boolean).join(" ");
@@ -28,8 +28,8 @@
     }
   };
 
-  const viewerElement = ref(null); //DOM element
-  const viewer = ref(null); //openSeadragon instance
+  const viewerElement = ref(null); // DOM element
+  const viewer = ref(null); // openSeadragon instance
 
   const fetchImage = () => {
     image.value = remoteObject(`images/${route.params.id}`, {
@@ -47,8 +47,9 @@
     { immediate: true }
   );
 
-  watchEffect(() => {
-    if (image.value?.image && props.imageType !== 'panorama') {
+  watchEffect(() => { 
+  if (image.value?.image) {
+    if (!image.value.isPanorama) {  //if not a panorama, set the openseadragon viewer & get related images
       nextTick(() => {
         if (viewerElement.value) {
           if (viewer.value) {
@@ -77,7 +78,7 @@
               loadingTextDiv.style.display = 'block';
             }
           });
-
+          
           if (image.value.type) {
             relatedImages.value = remoteFilteredCollection("images", {
               "filters[type][$eq]": image.value.type,
@@ -88,8 +89,14 @@
           console.warn('viewerElement is null');
         }
       });
+    } else {  //if a panorama, get related panorama images
+      relatedImages.value = remoteFilteredCollection("images", {
+        "filters[isPanorama][$eq]": true,
+        populate: "date,image",
+      });
     }
-  });
+  }
+});
 
   const orderByDate = (images) => {
     return [...images].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -106,7 +113,7 @@
 <template>
   <div v-if="image.id">
     <div id="item-top-image" style="text-align: center">
-      <div v-if="props.imageType == 'panorama'" id="item-top-pano">
+      <div v-if="image.isPanorama" id="item-top-pano">
         <Panorama :src="'https://sodrarada.dh.gu.se/backend' + image.image.url" />
       </div>
       <template v-else>
@@ -183,7 +190,7 @@
         </masonry-wall>
       </div>
 
-      
+
       
     </div>
   </div>
